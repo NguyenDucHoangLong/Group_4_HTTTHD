@@ -1,0 +1,21 @@
+﻿1.Hoàng Long
+Viết báo cáo về khảo sát hệ thống hiện tại (bao gồm các vai trò người dùng, chức năng,
+đánh giá những tồn đọng của các hệ thống hiện tại, đề xuất các vấn đề giải quyết mới).
+
+
+2.Nguyễn Nhạc, Thanh Sĩ
+Viết bảng mô tả hệ thống bán hàng trực tuyến dưới góc nhìn nhà phân tích 
+(hệ thống gồm các nghiệp vụ nào, tác nhân nào tương tác với hệ thống/nghiệp vụ,
+tác nhân chia rõ vai trò (business actor, boundary worker, worker).
+
+
+
+3.Trung Nam, Phượng Lĩnh
+Mô hình hóa các nghiệp vụ bằng sơ đồ UC, đặc tả các UC bằng văn bản và sơ đồ activity diagram.
+
+
+Deadline: 23h thứ 3 ngày 25/9.
+
+Test + slide: thứ 4 26/9
+
+Public: thứ 5 ngày 27/9
