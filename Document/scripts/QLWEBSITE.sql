@@ -9,19 +9,18 @@ Go
 use QLWEBSITE
 
 
+CREATE TABLE CTKhuyenMai(MaKM int, MaSP int, ChietKhau float, NgayBD date, NgayKT date PRIMARY KEY (MaKM, MaSP))
+CREATE TABLE BinhLuan_DanhGia(MaBGDG int  , MaKH int, MaSP int, DanhGia int, NoiDung nvarchar(1000) PRIMARY KEY (MaBGDG, MaKH, MaSP))
+CREATE TABLE DonHang(MaDH int, MaKH int, NgayDat date, NgayGiao date, TinhTrangThanhToan int, DaThanhToan bit PRIMARY KEY (MaDH))
+CREATE TABLE CTDonHang(MaDH int, MaSP int, SoLuong int, DonGia  decimal, PhiVanChuyen decimal, DiaChiGiaoHang nvarchar(250), NguoiNhan nvarchar(50), SDT nchar(11) PRIMARY KEY (MaDH, MaSP))
+CREATE TABLE TaiKhoan(ID int, TenTaiKhoan nvarchar(50), MatKhau nvarchar(50), TrangThai bit, Quyen nvarchar(50) PRIMARY KEY (ID))
+CREATE TABLE KhachHang(MaKH int, TenKH nvarchar(30),NgSinh date, GioiTinh nvarchar(4), DiaChi nvarchar(30), SDT nvarchar(12), LoaiKH int, DiemTichLuy  int PRIMARY KEY (MaKH))
+CREATE TABLE NhanVien(MaNV int, TenNV nvarchar(30),NgSinh date, GioiTinh nvarchar(4), DiaChi nvarchar(30), SDT nvarchar(12), LoaiNV int, Thuong decimal PRIMARY KEY (MaNV))
+CREATE TABLE LoaiKH(MaCapBac int,  TenCapBac nvarchar(50), ChietKhau float, NgayApDung  date PRIMARY KEY (MaCapBac))  
+CREATE TABLE LoaiNV( MaLoai int,   LuongCoBan decimal, PhuCap float PRIMARY KEY (MaLoai))
 CREATE TABLE SanPham (MaSP int, LoaiSP int, TenSP nvarchar(50) , GiaBan decimal, HinhAnh image, DanhMuc int, SLTon int, NhaSanXuat nvarchar(50), NgayCapNhat date, MoTa nvarchar (1000) PRIMARY KEY (MaSP))
 CREATE TABLE LoaiSanPham(MaLoai int, TenLoaiSP nvarchar(50), PRIMARY KEY (MaLoai))
 CREATE TABLE DanhMuc(MaDanhMuc int, TenDanhMuc nvarchar(50),  PRIMARY KEY (MaDanhMuc))
-CREATE TABLE CTKhuyenMai(MaKM int, MaSP int, ChietKhau float, NgayBD date, NgayKT date PRIMARY KEY (MaKM, MaSP))
-CREATE TABLE KhachHang(MaKH int, LoaiKH int, DiemTichLuy  int PRIMARY KEY (MaKH, LoaiKH))
-CREATE TABLE NhanVien(MaNV int, LoaiNV int, Thuong decimal PRIMARY KEY (MaNV, LoaiNV))
-CREATE TABLE LoaiNV( MaLoai int,  LoaiNguoiDung int, LuongCoBan decimal, PhuCap float PRIMARY KEY (MaLoai))
-CREATE TABLE BinhLuan_DanhGia(MaBGDG int, MaKH int, MaSP int, DanhGia int, NoiDung nvarchar(1000) PRIMARY KEY (MaBGDG, MaKH, MaSP))
-CREATE TABLE DonHang(MaDH int, MaKH int, NgayDat date, NgayGiao date, TinhTrangThanhToan int, DaThanhToan bit PRIMARY KEY (MaDH))
-CREATE TABLE CTDonHang(MaDH int, MaSP int, SoLuong int, DonGia  decimal PRIMARY KEY (MaDH, MaSP))
-CREATE TABLE LoaiKH(MaCapBac int, LoaiNguoiDung int, TenCapBac nvarchar(50), ChietKhau float, NgayApDung  date PRIMARY KEY (MaCapBac))  
-CREATE TABLE LoaiNguoiDung(MaLoai int, TenLoai nvarchar(50), PRIMARY KEY (MaLoai))
-CREATE TABLE TaiKhoan(ID int, TenTaiKhoan nvarchar(50),  Email nvarchar(50), MatKhau nvarchar(50), DiaChi nvarchar(50), DienThoai  nvarchar(11), GioiTinh nvarchar(5), HoTen nvarchar(50), NgaySinh date, TrangThai bit PRIMARY KEY (ID))
 
 
 ALTER TABLE CTKhuyenMai
@@ -65,13 +64,6 @@ ALTER TABLE CTDonHang
 ADD FOREIGN KEY (MaSP)
 REFERENCES SanPham (MaSP)
 
-ALTER TABLE LoaiKH
-ADD FOREIGN KEY (LoaiNguoiDung)
-REFERENCES LoaiNguoiDung(MaLoai)
-
-ALTER TABLE LoaiNV
-ADD FOREIGN KEY (LoaiNguoiDung)
-REFERENCES LoaiNguoiDung (MaLoai)
 
 ALTER TABLE SanPham 
 ADD FOREIGN KEY (LoaiSP)
