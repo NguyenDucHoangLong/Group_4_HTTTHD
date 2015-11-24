@@ -1,0 +1,57 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<QLWebsite.Models.LoaiKH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+
+
+<br/>
+<p>
+    @Html.ActionLink("Thêm mới loại khách hàng", "ThemMoi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=>model.First().MaCapBac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenCapBac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ChietKhau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NgayApDung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaCapBac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenCapBac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChietKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayApDung)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "ChinhSua", new { @MaCapBac = item.MaCapBac }) |
+            @Html.ActionLink("Chi tiết", "ChiTiet", new { @MaCapBac  = item.MaCapBac }) |
+            @Html.ActionLink("Xóa", "Xoa", new { @MaCapBac = item.MaCapBac })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>

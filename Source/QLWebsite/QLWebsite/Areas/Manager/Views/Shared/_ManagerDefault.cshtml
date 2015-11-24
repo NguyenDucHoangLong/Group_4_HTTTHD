@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Manager Tools</a>
+                <a class="navbar-brand" href="@Url.Action("Index","Manager")">Quản lý</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -283,25 +283,37 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="/Admin/Home/Index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="@Url.Action("Index","Manager")"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <!-- Quản lý khuyến mãi --> 
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý khuyến mãi<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Danh sách khuyến mãi</a>
+                                    <a href="@Url.Action("Index", "QuanLyKhuyenMai")">Danh sách khuyến mãi</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm khuyến mãi</a>
+                                    <a href="@Url.Action("ThemMoi","QuanLyKhuyenMai")">Thêm khuyến mãi</a>
                                 </li>
                             </ul>
                         </li>
-                        <!-- Báo cáo--> 
+                        
+                        <!-- Quản lý loại khách hàng -->
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Quản lý loại khách hàng<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="@Url.Action("Index", "QuanLyLoaiKhachHang")">Danh sách loại khách hàng</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ThemMoi", "QuanLyLoaiKhachHang")">Thêm mới loại khách hàng</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Báo cáo-->
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i>Báo cáo<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                            </ul>
+                            <ul class="nav nav-second-level"></ul>
                         </li>
                     </ul>
                 </div>

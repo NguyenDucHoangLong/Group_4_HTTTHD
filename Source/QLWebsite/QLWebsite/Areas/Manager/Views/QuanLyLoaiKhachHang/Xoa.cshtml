@@ -1,0 +1,46 @@
+﻿@model QLWebsite.Models.LoaiKH
+
+@{
+    ViewBag.Title = "Xoa";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+<br/>
+<h3>Bạn có thực sự muốn xóa loại khách hàng này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenCapBac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenCapBac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChietKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChietKhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayApDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayApDung)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xác nhận xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "Index")
+        </div>
+    }
+</div>
