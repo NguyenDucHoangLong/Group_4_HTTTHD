@@ -49,6 +49,7 @@
     <EntitySetMapping Name="DonHangs">
       <EntityTypeMapping TypeName="QLWEBSITEModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
@@ -108,7 +109,6 @@
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="LoaiNV" ColumnName="LoaiNV" />
-          <ScalarProperty Name="Thuong" ColumnName="Thuong" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -131,6 +131,7 @@
     <EntitySetMapping Name="TaiKhoans">
       <EntityTypeMapping TypeName="QLWEBSITEModel.TaiKhoan">
         <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="MaND" ColumnName="MaND" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />

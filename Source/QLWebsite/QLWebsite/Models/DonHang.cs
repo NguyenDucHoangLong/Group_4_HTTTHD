@@ -25,9 +25,10 @@ namespace QLWebsite.Models
         public Nullable<System.DateTime> NgayDat { get; set; }
         public Nullable<System.DateTime> NgayGiao { get; set; }
         public Nullable<int> TinhTrangThanhToan { get; set; }
+        public Nullable<double> TongTien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDonHang> CTDonHangs { get; set; }
-        public virtual TaiKhoan TaiKhoan { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
     }
 }

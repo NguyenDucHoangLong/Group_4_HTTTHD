@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\Models\QLWebsite.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\QLWebsite\QLWebsite\Models\QLWebsite.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -14,24 +14,11 @@ namespace QLWebsite.Models
     
     public partial class TaiKhoan
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TaiKhoan()
-        {
-            this.BinhLuan_DanhGia = new HashSet<BinhLuan_DanhGia>();
-            this.DonHangs = new HashSet<DonHang>();
-        }
-    
         public int ID { get; set; }
         public string TenTaiKhoan { get; set; }
         public string MatKhau { get; set; }
         public Nullable<bool> TrangThai { get; set; }
         public string Quyen { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BinhLuan_DanhGia> BinhLuan_DanhGia { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
-        public virtual KhachHang KhachHang { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
+        public Nullable<int> MaND { get; set; }
     }
 }

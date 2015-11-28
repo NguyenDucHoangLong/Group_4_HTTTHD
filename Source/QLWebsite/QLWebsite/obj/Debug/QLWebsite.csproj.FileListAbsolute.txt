@@ -50,3 +50,20 @@ D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Group_4_HTTTHD\Source\Q
 D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.Mvc.dll
 D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.xml
 D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.Mvc.xml
+D:\QLWebsite\QLWebsite\bin\EntityFramework.dll
+D:\QLWebsite\QLWebsite\bin\EntityFramework.SqlServer.dll
+D:\QLWebsite\QLWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\QLWebsite\QLWebsite\bin\Newtonsoft.Json.dll
+D:\QLWebsite\QLWebsite\bin\PagedList.dll
+D:\QLWebsite\QLWebsite\bin\PagedList.Mvc.dll
+D:\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.dll
+D:\QLWebsite\QLWebsite\bin\System.Web.Http.dll
+D:\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.dll
+D:\QLWebsite\QLWebsite\bin\EntityFramework.xml
+D:\QLWebsite\QLWebsite\bin\EntityFramework.SqlServer.xml
+D:\QLWebsite\QLWebsite\bin\Newtonsoft.Json.xml
+D:\QLWebsite\QLWebsite\bin\PagedList.xml
+D:\QLWebsite\QLWebsite\bin\PagedList.Mvc.xml
+D:\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.xml
+D:\QLWebsite\QLWebsite\bin\System.Web.Http.xml
+D:\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.xml

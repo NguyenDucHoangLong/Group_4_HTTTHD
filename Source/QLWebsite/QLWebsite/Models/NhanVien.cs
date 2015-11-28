@@ -21,9 +21,7 @@ namespace QLWebsite.Models
         public string DiaChi { get; set; }
         public string SDT { get; set; }
         public Nullable<int> LoaiNV { get; set; }
-        public Nullable<decimal> Thuong { get; set; }
     
         public virtual LoaiNV LoaiNV1 { get; set; }
-        public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

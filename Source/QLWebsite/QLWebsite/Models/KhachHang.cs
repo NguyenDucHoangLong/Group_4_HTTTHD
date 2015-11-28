@@ -14,6 +14,14 @@ namespace QLWebsite.Models
     
     public partial class KhachHang
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KhachHang()
+        {
+            this.CTDonHangs = new HashSet<CTDonHang>();
+            this.DonHangs = new HashSet<DonHang>();
+            this.BinhLuan_DanhGia = new HashSet<BinhLuan_DanhGia>();
+        }
+    
         public int MaKH { get; set; }
         public string TenKH { get; set; }
         public Nullable<System.DateTime> NgSinh { get; set; }
@@ -23,7 +31,12 @@ namespace QLWebsite.Models
         public Nullable<int> LoaiKH { get; set; }
         public Nullable<int> DiemTichLuy { get; set; }
     
-        public virtual TaiKhoan TaiKhoan { get; set; }
         public virtual LoaiKH LoaiKH1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTDonHang> CTDonHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DonHang> DonHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BinhLuan_DanhGia> BinhLuan_DanhGia { get; set; }
     }
 }

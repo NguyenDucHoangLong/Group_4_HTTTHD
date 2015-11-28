@@ -1,0 +1,73 @@
+﻿@model QLWebsite.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminDefault.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Xóa tài khoản</h3>
+            </div>
+
+            <h3>Bạn có thật sự muốn xóa tài khoản này?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Tên tài khoản
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenTaiKhoan)
+                    </dd>
+
+                    <dt>
+                        Mật khẩu
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MatKhau)
+                    </dd>
+
+                    <dt>
+                        Trạng thái
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TrangThai)
+                    </dd>
+
+                    <dt>
+                        Quyền
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Quyen)
+                    </dd>
+
+                    <dt>
+                        Người dùng
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MaND)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Xóa" class="btn btn-default" /> |
+                        @Html.ActionLink("Quay lại", "Index")
+                    </div>
+                }
+            </div>
+            </div>
+        </div>
+    </div>

@@ -20,7 +20,7 @@ namespace QLWebsite.Models
         public Nullable<int> DanhGia { get; set; }
         public string NoiDung { get; set; }
     
-        public virtual TaiKhoan TaiKhoan { get; set; }
         public virtual SanPham SanPham { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
     }
 }
