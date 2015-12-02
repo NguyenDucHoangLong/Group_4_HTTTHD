@@ -67,3 +67,38 @@ D:\QLWebsite\QLWebsite\bin\PagedList.Mvc.xml
 D:\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.xml
 D:\QLWebsite\QLWebsite\bin\System.Web.Http.xml
 D:\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\QLWebsite.dll.config
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\QLWebsite.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\QLWebsite.pdb
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\EntityFramework.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\EntityFramework.SqlServer.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\Microsoft.Web.Infrastructure.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\Newtonsoft.Json.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\PagedList.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\PagedList.Mvc.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Helpers.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Http.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Mvc.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Razor.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Webpages.Deployment.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Webpages.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Webpages.Razor.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\EntityFramework.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\EntityFramework.SqlServer.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\Newtonsoft.Json.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\PagedList.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\PagedList.Mvc.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Http.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Razor.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Webpages.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Webpages.Deployment.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Webpages.Razor.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Helpers.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web.Mvc.xml
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\obj\Debug\QLWebsite.csprojResolveAssemblyReference.cache
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\obj\Debug\QLWebsite.dll
+H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\obj\Debug\QLWebsite.pdb
