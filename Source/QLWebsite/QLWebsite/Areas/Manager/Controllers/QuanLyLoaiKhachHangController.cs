@@ -42,13 +42,15 @@ namespace QLWebsite.Areas.Manager.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult ThemMoi(LoaiKH loaiKH)
+        public ActionResult ThemMoi(FormCollection f)
         {
-            if (ModelState.IsValid)
-            {
-                db.LoaiKHs.Add(loaiKH);
-                db.SaveChanges();
-            }
+            LoaiKH loaiKH = new LoaiKH();
+            loaiKH.TenCapBac = f["TenCapBac"];
+            loaiKH.ChietKhau = float.Parse(f["ChietKhau"]);
+            loaiKH.NgayApDung = DateTime.Parse(f["NgayApDung"]);
+            db.LoaiKHs.Add(loaiKH);
+             db.SaveChanges();
+            
             return View();
         }
 
@@ -68,15 +70,14 @@ namespace QLWebsite.Areas.Manager.Controllers
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult ChinhSua(LoaiKH loaiKH)
+        public ActionResult ChinhSua(int MaCapBac, FormCollection f)
         {
-            //Thêm vào cơ sở dữ liệu
-            if (ModelState.IsValid)
-            {
-                //Thực hiện cập nhật trong model
-                db.Entry(loaiKH).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-            }
+            
+            LoaiKH loaiKh = db.LoaiKHs.SingleOrDefault(n => n.MaCapBac == MaCapBac);
+            loaiKh.TenCapBac = f["TenCapBac"];
+            loaiKh.ChietKhau = int.Parse(f["ChietKhau"]);
+            loaiKh.NgayApDung = DateTime.Parse(f["NgayApDung"]);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

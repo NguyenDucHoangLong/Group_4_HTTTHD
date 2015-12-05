@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "ThongKe_BieuDo";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+
+<h2>Thống kê đơn hàng dạng biểu đồ</h2>
+<br />
+<form action="@Url.Action("ThongKe_TiLe","ThongKeBaoCao")" method="post">
+    Ngày bắt đầu
+<input type="date" name="NgayBatDau" id="NgayBatDau" />
+<br />
+<br />
+    Ngày kết thúc
+<input type="date" name="NgayKetThuc" id="NgayKetThuc" />
+<br />
+<br />
+<input id="ThongKe" type="submit" value="Thống kê"/>
+</form>

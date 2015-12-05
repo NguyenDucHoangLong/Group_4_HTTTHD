@@ -1,4 +1,4 @@
-﻿@model QLWebsite.Models.LoaiKH
+﻿@model QLWebsite.Models.CTKhuyenMai
 
 @{
     ViewBag.Title = "ChinhSua";
@@ -9,31 +9,41 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
         <br/>
-        <h4>Cập nhật thông tin loại khách hàng</h4>
+        <h4>Cập nhật chương trình khuyến mãi</h4>
         <hr />
-        <input type="hidden" value="@Model.MaCapBac" name="MaCapBac" />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.MaKM)
+
+        @Html.HiddenFor(model => model.MaSP)
 
         <div class="form-group">
-            <label class = "control-label col-md-2">Tên cấp bậc</label>
+            <label class="control-label col-md-2">Tên sản phẩm</label>
             <div class="col-md-10">
-                <input type="text" value="@Model.TenCapBac" name="TenCapBac"/>
+                @Model.SanPham.TenSP
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-2">Chiết khấu</label>
             <div class="col-md-10">
-                <input type="text" value="@Model.ChietKhau" name="ChietKhau" />
+                <input  value="@Model.ChietKhau" name="ChietKhau"/>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Ngày áp dụng</label>
+            <label class="control-label col-md-2">Ngày bắt đầu</label>
             <div class="col-md-10">
-                <input type="date" value="@Model.NgayApDung" name="NgayApDung" />
+               <input type="date" value="@Model.NgayBD" name="NgayBD"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ngày kết thúc</label>
+            <div class="col-md-10">
+                <input type="date" value="@Model.NgayKT" name="NgayKT"/>
             </div>
         </div>
 

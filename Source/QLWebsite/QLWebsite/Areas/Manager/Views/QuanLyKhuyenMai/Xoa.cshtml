@@ -1,24 +1,23 @@
-﻿@model QLWebsite.Models.LoaiKH
+﻿@model QLWebsite.Models.CTKhuyenMai
 
 @{
     ViewBag.Title = "Xoa";
     Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
 }
 <br/>
-<h3>Bạn có thực sự muốn xóa loại khách hàng này?</h3>
+<h3>Bạn có muốn xóa chương trình khuyến mãi này?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tên cấp bậc
+            Tên sản phẩm
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenCapBac)
+            @Html.DisplayFor(model => model.SanPham.TenSP)
         </dd>
-
         <dt>
-            Chiết khấu
+           Chiết khấu
         </dt>
 
         <dd>
@@ -26,11 +25,19 @@
         </dd>
 
         <dt>
-            Ngày áp dụng
+            Ngày bắt đầu
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NgayApDung)
+            @Html.DisplayFor(model => model.NgayBD)
+        </dd>
+
+        <dt>
+           Ngày kết thúc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKT)
         </dd>
 
     </dl>
@@ -39,7 +46,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Xác nhận xóa" class="btn btn-default" /> |
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
             @Html.ActionLink("Trở về", "Index")
         </div>
     }

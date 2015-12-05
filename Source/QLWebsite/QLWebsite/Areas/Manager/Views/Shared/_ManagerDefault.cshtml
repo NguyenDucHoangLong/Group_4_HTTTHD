@@ -36,6 +36,10 @@
     <link href="/assets/admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/Chart.js"></script>
+    <script src="~/Scripts/Chart.min.js"></script>
 </head>
 
 <body>
@@ -313,7 +317,14 @@
                         <!-- Báo cáo-->
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i>Báo cáo<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level"></ul>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="@Url.Action("Index", "ThongKeBaoCao")">Thống kê báo cáo</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ThongKe_BieuDo", "ThongKeBaoCao")">Thống kê dạng biểu đồ</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

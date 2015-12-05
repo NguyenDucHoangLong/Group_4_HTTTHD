@@ -1,0 +1,51 @@
+﻿@model QLWebsite.Models.CTKhuyenMai
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+
+<div>
+    <br/>
+    <h4>Chi tiết chương trình khuyến mãi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPham.TenSP)
+        </dd>
+        <dt>
+           Chiết khấu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChietKhau)
+        </dd>
+
+        <dt>
+           Ngày bắt đầu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBD)
+        </dd>
+
+        <dt>
+            Ngày kết thúc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKT)
+        </dd>
+
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "ChinhSua", new { @maKM = Model.MaKM }) |
+    @Html.ActionLink("Trở về", "Index")
+</p>

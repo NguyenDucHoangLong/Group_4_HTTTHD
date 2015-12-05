@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+
+
+<script>
+    function jsonToDate(strDate) {
+        var dateString = (strDate).substr(6);
+        var currentTime = new Date(parseInt(dateString));
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDate();
+        var year = currentTime.getFullYear();
+        var date = day + "/" + month + "/" + year;
+        return date;
+    }
+    function getData() {
+
+        $.ajax({
+            url: "/ThongKeBaoCao/ThongKe",
+            type: "GET",
+            data: {
+                pNgayBatDau: $('#NgayBatDau').val(),
+                pNgayKetThuc: $('#NgayKetThuc').val(),
+                pTinhTrangDonHang: $('#TrangThaiDonHang').val()
+            },
+            success: function (data) {
+                var str = " <br /> <table class='table'>";
+                str += "<tr>";
+                str += "<th>Mã đơn hàng</th>";
+                str += "<th>Tên khách hàng</th>";
+                str += "<th>Ngày đặt</th>";
+                str += "<th>Ngày giao</th>";
+                str += "<th>Tình trạng đơn hàng</th>";
+                str += "<th>Tổng tiền</th>";
+                str += "</tr>";
+                $.each(data, function (key, val) {
+                    str += "<tr>";
+                    str += "<td>" + val.MaDH + "</td>";
+                    str += "<td>" + val.TenKH + "</td>";
+                    str += "<td>" + jsonToDate(val.NgayDat) + "</td>";
+                    str += "<td>" + jsonToDate(val.NgayGiao) + "</td>";
+                    str += "<td>" + $('#TrangThaiDonHang').val() + "</td>";
+                    str += "<td>" + val.TongTien + " VNĐ </td>";
+                    str += "</tr>";
+                });
+                str += "</table>";
+                $('#Result').html(str);
+            }
+        });
+
+    }
+</script>
+
+
+<br />
+<h4>Thống kê báo cáo đơn hàng</h4>
+@*<form action="" method="post">*@
+    Ngày bắt đầu
+<input type="date" name="NgayBatDau" id="NgayBatDau" />
+<br />
+<br />
+    Ngày kết thúc
+<input type="date" name="NgayKetThuc" id="NgayKetThuc" />
+<br />
+<br />
+    Tình trạng đơn hàng
+<select name="TrangThaiDonHang" id="TrangThaiDonHang">
+    <option>Đang chờ giao hàng</option>
+    <option>Đã nhận hàng</option>
+    <option>Đơn hàng bị hủy</option>
+</select>
+<br />
+<br />
+<input id="ThongKe" type="submit" value="Thống kê" onclick="getData()" />
+
+@*</form>*@
+<br />
+<div id="Result">
+</div>
+

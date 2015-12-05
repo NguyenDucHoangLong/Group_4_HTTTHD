@@ -5,38 +5,80 @@
     Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
 }
 
+@* Kiểm tra validation cho form nhập liệu *@
+<script language="javascript">
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
+    //Hàm kiểm tra nhập vào định dạng và rỗng chiết khấu
+    function isChietKhau(chietKhau) {
+        if (chietKhau.length > 0) {
+            if (chietKhau.which != 8 && chietKhau.which != 0 && (chietKhau.which < 48 || chietKhau.which > 57))
+                return false;
+            else
+                return true;
+        }
+        else
+            return false;
+    }
+    $(document).ready(function () {
+        $('#form_insert').submit(function () {
+            //Lấy dữ liệu từ form
+            var TenCapBac = $.trim($('#TenCapBac').val());
+            var ChietKhau = $.trim($('#ChietKhau').val());
+            var NgayApDung = $.trim($('#NgayApDung').val());
+
+            //Validate dữ liệu
+            var flag = true;
+            //Tên cấp bậc
+            if (TenCapBac.length <= 0) {
+                $('#TenCapBac_Loi').text("Bạn phải nhập tên cấp bậc");
+                flag = false;
+            }
+            else {
+                $('#TenCapBac_Loi').text("");
+            }
+            //Chiết khấu
+            //if (isChietKhau($('#ChietKhau').val()) == false) {
+            //    $('#ChietKhau_Loi').text("Bạn nhập chưa nhập chiết khấu hoặc sai định dạng");
+            //    flag = false;
+            //}
+            //else {
+            //    $('#ChietKhau_Loi').text("");
+            //}
+        
+            return flag;
+        });
+    });
     
+</script>
+
+<form method="post" action="" id="form_insert">
+
     <div class="form-horizontal">
-        <br/>
+        <br />
         <h4>Thêm loại khách hàng</h4>
         <hr />
-        @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TenCapBac, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Tên cấp bậc</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TenCapBac)
-                @Html.ValidationMessageFor(model => model.TenCapBac)
+                <input type="text" name="TenCapBac" id="TenCapBac" value=""/>
+                <span id="TenCapBac_Loi" style="color:red"></span>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ChietKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Chiết khấu</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ChietKhau)
-                @Html.ValidationMessageFor(model => model.ChietKhau)
+                <input type="text" name="ChietKhau" id="ChietKhau" value="" />
+                <span id="ChietKhau_Loi" style="color:red"></span>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NgayApDung, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Ngày áp dụng</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NgayApDung)
-                @Html.ValidationMessageFor(model => model.NgayApDung)
+                <input type="date" name="NgayApDung" id="NgayApDung" value=""/>
+                <span id="NgayApDung_Loi" style="color:red"></span>
             </div>
         </div>
 
@@ -46,7 +88,7 @@
             </div>
         </div>
     </div>
-}
+</form>
 
 <div>
     @Html.ActionLink("Trở về", "Index")
