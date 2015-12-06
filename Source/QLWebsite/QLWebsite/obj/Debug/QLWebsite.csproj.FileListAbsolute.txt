@@ -102,3 +102,38 @@ H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\bin\System.Web
 H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\obj\Debug\QLWebsite.csprojResolveAssemblyReference.cache
 H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\obj\Debug\QLWebsite.dll
 H:\Study\Nam 4\PTUDHTTTHD\DA\v01- Trang admin\QLWebsite\QLWebsite\obj\Debug\QLWebsite.pdb
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.dll.config
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.pdb
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\EntityFramework.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\EntityFramework.SqlServer.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\Newtonsoft.Json.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.Mvc.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Helpers.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Http.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Mvc.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Razor.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.Deployment.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.Razor.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\EntityFramework.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\EntityFramework.SqlServer.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\Newtonsoft.Json.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.Mvc.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Http.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Razor.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.Deployment.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.Razor.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Helpers.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Mvc.xml
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.csprojResolveAssemblyReference.cache
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.dll
+C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.pdb
