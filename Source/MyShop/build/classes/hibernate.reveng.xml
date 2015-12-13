@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-name="BinhLuan_DanhGia"/>
+  <table-filter match-name="CTDonHang"/>
+  <table-filter match-name="CTKhuyenMai"/>
+  <table-filter match-name="DanhMuc"/>
+  <table-filter match-name="DonHang"/>
+  <table-filter match-name="KhachHang"/>
+  <table-filter match-name="LoaiKH"/>
+  <table-filter match-name="LoaiNV"/>
+  <table-filter match-name="LoaiSanPham"/>
+  <table-filter match-name="NhanVien"/>
+  <table-filter match-name="SanPham"/>
+  <table-filter match-name="TaiKhoan"/>
+</hibernate-reverse-engineering>
