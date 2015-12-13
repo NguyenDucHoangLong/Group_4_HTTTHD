@@ -137,3 +137,23 @@ C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\
 C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.csprojResolveAssemblyReference.cache
 C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.dll
 C:\Users\hoangnam-pc\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.pdb
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.dll.config
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.dll
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.pdb
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\EntityFramework.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\EntityFramework.SqlServer.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\Newtonsoft.Json.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\PagedList.Mvc.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Net.Http.Formatting.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Http.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Http.WebHost.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Razor.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.Deployment.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Webpages.Razor.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Helpers.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\System.Web.Mvc.xml
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.csprojResolveAssemblyReference.cache
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.dll
+D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.pdb

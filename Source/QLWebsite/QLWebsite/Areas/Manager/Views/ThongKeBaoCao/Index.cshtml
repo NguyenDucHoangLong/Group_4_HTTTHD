@@ -6,6 +6,7 @@
 
 
 <script>
+   
     function jsonToDate(strDate) {
         var dateString = (strDate).substr(6);
         var currentTime = new Date(parseInt(dateString));
@@ -50,7 +51,56 @@
             }
         });
 
+        $.ajax({
+            url: "/ThongKeBaoCao/ThongKe_BieuDo",
+            type: "GET",
+            data: {
+                pNgayBatDau: $('#NgayBatDau').val(),
+                pNgayKetThuc: $('#NgayKetThuc').val()
+            },
+            success: function (data) {
+                var str = "<b>Thống kê số đơn hàng</b><br>";
+                str += "<p style='background-color:#878BB6'>Tổng số đơn hàng đã nhận:" + data.soDHDaNhan + "</p>";
+                str += "<p style='background-color:#4ACAB4'>Tổng số đơn hàng bị hủy:" + data.soDHBiHuy + "</p>";
+                str += "<p style='background-color:#FF8153'>Tổng số đơn hàng đang chờ:" + data.soDHDangCho + "</p>";
+                $('#Result1').html(str);
+
+                var p1 = parseInt(data.soDHDaNhan);
+                var p2 = parseInt(data.soDHBiHuy);
+                var p3 = parseInt(data.soDHDangCho);
+                
+                var pieData = [
+        {
+            value: p1 * 100 / (p1 + p2 + p3),
+            color: "#878BB6"
+        },
+        {
+            value: p2 * 100 / (p1 + p2 + p3),
+            color: "#4ACAB4"
+        },
+        {
+            value: 100 - p1 * 100 / (p1 + p2 + p3) - p2 * 100/ (p1 + p2 + p3),
+            color: "#FF8153"
+        }
+                ];
+
+                // pie chart options
+                var pieOptions = {
+                    segmentShowStroke: false,
+                    animateScale: true
+                }
+
+                // get pie chart canvas
+                var donhang = document.getElementById("donhang").getContext("2d");
+
+                // draw pie chart
+                new Chart(donhang).Pie(pieData, pieOptions);
+
+            }
+
+        });
     }
+    
 </script>
 
 
@@ -79,4 +129,14 @@
 <br />
 <div id="Result">
 </div>
+
+<br />
+<table>
+    <tr>
+        <td  id="Result1"></td>
+        <td><canvas id="donhang" width="600" height="400"></canvas></td>
+    </tr>
+</table>
+
+
 

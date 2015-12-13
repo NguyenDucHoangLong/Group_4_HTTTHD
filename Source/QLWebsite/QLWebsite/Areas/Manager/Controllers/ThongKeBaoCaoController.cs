@@ -33,26 +33,30 @@ namespace QLWebsite.Areas.Manager.Controllers
                 TT = 0;
         
             var LstDonHang = db.ThongKe(NgayBatDau, NgayKetThuc, TT);
+            
 
             return Json(LstDonHang, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult ThongKe_BieuDo()
+        [HttpGet]
+        public JsonResult ThongKe_BieuDo(string pNgayBatDau, string pNgayKetThuc)
         {
-            return View();
-        }
-        //public ActionResult ThongKe_TiLe(FormCollection f)
-        //{
-        //    DateTime NgayBatDau = DateTime.Parse(f["NgayBatDau"]);
-        //    DateTime NgayKetThuc = DateTime.Parse(f["NgayKetThuc"]);
+            DateTime NgayBatDau = DateTime.Parse(pNgayBatDau);
+            DateTime NgayKetThuc = DateTime.Parse(pNgayKetThuc);
+            var SoDHDaNhan = db.ThongKe_TiLeDonHang(NgayBatDau, NgayKetThuc, 1);
+            var SoDHBiHuy = db.ThongKe_TiLeDonHang(NgayBatDau, NgayKetThuc, -1);
+            var SoDHDangCho = db.ThongKe_TiLeDonHang(NgayBatDau, NgayKetThuc, 0);
 
-        //    string SoDHDaNhan = db.ThongKe_TiLeDonHang(NgayBatDau, NgayKetThuc, 1).ToString();
-        //    string SoDHBiHuy = db.ThongKe_TiLeDonHang(NgayBatDau, NgayKetThuc, -1).ToString();
-        //    string SoDHDangCho = db.ThongKe_TiLeDonHang(NgayBatDau, NgayKetThuc, 0).ToString();
+            var lst = new {
+                soDHDaNhan = SoDHDaNhan.First(),
+                soDHBiHuy = SoDHBiHuy.First(),
+                soDHDangCho = SoDHDangCho.First()
+            };
 
+            return Json(lst, JsonRequestBehavior.AllowGet);
 
-        //}
-
+    }
+      
 
     }
 }
