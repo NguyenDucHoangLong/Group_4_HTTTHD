@@ -774,6 +774,9 @@
     <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\ThongKeBaoCao\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\ThongKeBaoCao\ThongKe.cshtml" />
+    <Content Include="Areas\Manager\Views\ThongKeBaoCao\ThongKe_BieuDo.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\css\bootstrap-theme.css" />
     <Content Include="Scripts\css\bootstrap-theme.min.css" />
@@ -807,6 +810,7 @@
     <Compile Include="Areas\Manager\Controllers\ManagerController.cs" />
     <Compile Include="Areas\Manager\Controllers\QuanLyKhuyenMaiController.cs" />
     <Compile Include="Areas\Manager\Controllers\QuanLyLoaiKhachHangController.cs" />
+    <Compile Include="Areas\Manager\Controllers\ThongKeBaoCaoController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
