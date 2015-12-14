@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3f3a8b2422034b7ea3e42e8e3ba67095" Name="Diagram1">
+        <EntityTypeShape EntityType="QLWEBSITEModel.BaiPost" Width="1.5" PointX="10" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.BinhLuan_DanhGia" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.BinhLuanBaiPost" Width="1.5" PointX="12.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.CTDonHang" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.CTKhuyenMai" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.DanhMuc" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.DonHang" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.KhachHang" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.LoaiKH" Width="1.5" PointX="1.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.LoaiNV" Width="1.5" PointX="7.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.NhanVien" Width="1.5" PointX="10" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.SanPham" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.SanPhamKhuyenMai" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.TaiKhoan" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_BaiPost_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_BinhLuanBaiPost_BaiPost" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_BinhLuan_DanhGia_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_BinhLuan_DanhGia_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_BinhLuanBaiPost_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_CTDonHang_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_CTDonHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_SanPhamKhuyenMai_CTKhuyenMai" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_SanPham_DanhMuc" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_KhachHang_LoaiKH" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_NhanVien_LoaiNV" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_SanPham_LoaiSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_SanPhamKhuyenMai_SanPham" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

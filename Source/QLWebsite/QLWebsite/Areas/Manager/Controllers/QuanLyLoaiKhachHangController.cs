@@ -16,7 +16,7 @@ namespace QLWebsite.Areas.Manager.Controllers
         public ActionResult Index(int? Page)
         {
             int pageNumber = (Page ?? 1);
-            int pageSize = 3;
+            int pageSize = 5;
             return View(db.LoaiKHs.ToList().OrderBy(n => n.MaCapBac).ToPagedList(pageNumber, pageSize));
         }
         

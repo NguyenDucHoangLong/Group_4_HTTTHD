@@ -1,0 +1,65 @@
+﻿@*@model QLWebsite.Models.SanPhamKhuyenMai*@
+@model List<QLWebsite.Models.SanPhamKhuyenMai>
+
+@{
+    ViewBag.Title = "ThemMoi";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Chương trình khuyến mãi
+            </label>
+            <div class="col-md-10">
+               <select name="maKM">
+                   @foreach(var item in Model)
+                   { 
+                   <option value="@item.CTKhuyenMai.MaKM">@item.CTKhuyenMai.MaKM</option>
+                   }
+               </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Sản phẩm
+            </label>
+            <div class="col-md-10">
+                <select name="maSP">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.SanPham.MaSP">@item.SanPham.TenSP</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+               Chiết khấu
+            </label>
+            <div class="col-md-10">
+                <input name="ChietKhau" type="text"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm mới" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về", "Index")
+</div>

@@ -7,26 +7,24 @@
     Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
 }
 
-<br />
+<br/>
+
 <p>
     @Html.ActionLink("Thêm mới chương trình khuyến mãi", "ThemMoi")
 </p>
 <table class="table">
     <tr>
         <th>
-            Mã khuyến mãi
+            Mã CT Khuyến mãi
         </th>
         <th>
-            Tên sản phẩm
+           Tên CT khuyến mãi
         </th>
         <th>
-            Chiết khấu
+           Ngày bắt đầu
         </th>
         <th>
-            Ngày bắt đầu
-        </th>
-        <th>
-            Ngày kết thúc
+           Ngày kết thúc
         </th>
         <th></th>
     </tr>
@@ -37,10 +35,7 @@
             @Html.DisplayFor(modelItem => item.MaKM)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SanPham.TenSP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChietKhau)
+            @Html.DisplayFor(modelItem => item.TenCTKM)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NgayBD)
@@ -49,9 +44,9 @@
             @Html.DisplayFor(modelItem => item.NgayKT)
         </td>
         <td>
-            @Html.ActionLink("Chỉnh sửa", "ChinhSua", new { @maKM = item.MaKM}) |
-            @Html.ActionLink("Chi tiết", "ChiTiet", new { @maKM = item.MaKM }) |
-            @Html.ActionLink("Xóa", "Xoa", new { @maKM = item.MaKM })
+            @Html.ActionLink("Chỉnh sửa", "ChinhSua", new { @MaKM = item.MaKM }) |
+            @Html.ActionLink("Chi tiết", "ChiTiet", new { @MaKM=item.MaKM }) |
+            @Html.ActionLink("Xóa", "Xoa", new { @MaKM = item.MaKM })
         </td>
     </tr>
 }

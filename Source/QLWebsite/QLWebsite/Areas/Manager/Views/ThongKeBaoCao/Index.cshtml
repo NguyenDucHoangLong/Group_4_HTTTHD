@@ -31,16 +31,16 @@
                 str += "<tr>";
                 str += "<th>Mã đơn hàng</th>";
                 str += "<th>Tên khách hàng</th>";
-                str += "<th>Ngày đặt</th>";
+                str += "<th>Ngày lập</th>";
                 str += "<th>Ngày giao</th>";
-                str += "<th>Tình trạng đơn hàng</th>";
+                str += "<th>Trạng thái đơn hàng</th>";
                 str += "<th>Tổng tiền</th>";
                 str += "</tr>";
                 $.each(data, function (key, val) {
                     str += "<tr>";
                     str += "<td>" + val.MaDH + "</td>";
                     str += "<td>" + val.TenKH + "</td>";
-                    str += "<td>" + jsonToDate(val.NgayDat) + "</td>";
+                    str += "<td>" + jsonToDate(val.NgayLap) + "</td>";
                     str += "<td>" + jsonToDate(val.NgayGiao) + "</td>";
                     str += "<td>" + $('#TrangThaiDonHang').val() + "</td>";
                     str += "<td>" + val.TongTien + " VNĐ </td>";

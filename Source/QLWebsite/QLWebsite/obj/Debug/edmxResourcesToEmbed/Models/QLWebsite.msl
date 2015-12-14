@@ -1,14 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QLWEBSITEModelStoreContainer" CdmEntityContainer="QLWEBSITEEntities">
+    <EntitySetMapping Name="BaiPosts">
+      <EntityTypeMapping TypeName="QLWEBSITEModel.BaiPost">
+        <MappingFragment StoreEntitySet="BaiPost">
+          <ScalarProperty Name="MaPost" ColumnName="MaPost" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ThoiGianPost" ColumnName="ThoiGianPost" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="NguoiPost" ColumnName="NguoiPost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="BinhLuan_DanhGia">
       <EntityTypeMapping TypeName="QLWEBSITEModel.BinhLuan_DanhGia">
         <MappingFragment StoreEntitySet="BinhLuan_DanhGia">
-          <ScalarProperty Name="MaBGDG" ColumnName="MaBGDG" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="DanhGia" ColumnName="DanhGia" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BinhLuanBaiPosts">
+      <EntityTypeMapping TypeName="QLWEBSITEModel.BinhLuanBaiPost">
+        <MappingFragment StoreEntitySet="BinhLuanBaiPost">
+          <ScalarProperty Name="MaPost" ColumnName="MaPost" />
+          <ScalarProperty Name="NguoiBinhLuan" ColumnName="NguoiBinhLuan" />
+          <ScalarProperty Name="ThoiGianBinhLuan" ColumnName="ThoiGianBinhLuan" />
+          <ScalarProperty Name="NoiDungBinhLuan" ColumnName="NoiDungBinhLuan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -19,10 +40,6 @@
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
-          <ScalarProperty Name="PhiVanChuyen" ColumnName="PhiVanChuyen" />
-          <ScalarProperty Name="DiaChiGiaoHang" ColumnName="DiaChiGiaoHang" />
-          <ScalarProperty Name="NguoiNhan" ColumnName="NguoiNhan" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -30,10 +47,9 @@
       <EntityTypeMapping TypeName="QLWEBSITEModel.CTKhuyenMai">
         <MappingFragment StoreEntitySet="CTKhuyenMai">
           <ScalarProperty Name="MaKM" ColumnName="MaKM" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
           <ScalarProperty Name="NgayBD" ColumnName="NgayBD" />
           <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
+          <ScalarProperty Name="TenCTKM" ColumnName="TenCTKM" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -49,12 +65,14 @@
     <EntitySetMapping Name="DonHangs">
       <EntityTypeMapping TypeName="QLWEBSITEModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
           <ScalarProperty Name="NgayGiao" ColumnName="NgayGiao" />
-          <ScalarProperty Name="TinhTrangThanhToan" ColumnName="TinhTrangThanhToan" />
+          <ScalarProperty Name="DiaChiGiao" ColumnName="DiaChiGiao" />
+          <ScalarProperty Name="TinhTrangDonHang" ColumnName="TinhTrangDonHang" />
+          <ScalarProperty Name="DaThanhToan" ColumnName="DaThanhToan" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -119,26 +137,50 @@
           <ScalarProperty Name="LoaiSP" ColumnName="LoaiSP" />
           <ScalarProperty Name="TenSP" ColumnName="TenSP" />
           <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
-          <ScalarProperty Name="DanhMuc" ColumnName="DanhMuc" />
+          <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
           <ScalarProperty Name="SLTon" ColumnName="SLTon" />
           <ScalarProperty Name="NhaSanXuat" ColumnName="NhaSanXuat" />
           <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="TacGia" ColumnName="TacGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamKhuyenMais">
+      <EntityTypeMapping TypeName="QLWEBSITEModel.SanPhamKhuyenMai">
+        <MappingFragment StoreEntitySet="SanPhamKhuyenMai">
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TaiKhoans">
       <EntityTypeMapping TypeName="QLWEBSITEModel.TaiKhoan">
         <MappingFragment StoreEntitySet="TaiKhoan">
-          <ScalarProperty Name="MaND" ColumnName="MaND" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+          <ScalarProperty Name="MaND" ColumnName="MaND" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ThongKe" FunctionName="QLWEBSITEModel.Store.ThongKe">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLWEBSITEModel.ThongKe_Result">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NgayGiao" ColumnName="NgayGiao" />
+          <ScalarProperty Name="TinhTrangDonHang" ColumnName="TinhTrangDonHang" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ThongKe_TiLeDonHang" FunctionName="QLWEBSITEModel.Store.ThongKe_TiLeDonHang" />
   </EntityContainerMapping>
 </Mapping>

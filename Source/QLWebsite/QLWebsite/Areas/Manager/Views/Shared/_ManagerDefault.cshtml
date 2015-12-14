@@ -294,10 +294,23 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý khuyến mãi<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="@Url.Action("Index", "QuanLyKhuyenMai")">Danh sách khuyến mãi</a>
+                                    <a href="@Url.Action("Index", "QuanLyCTKhuyenMai")">Danh sách khuyến mãi</a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("ThemMoi","QuanLyKhuyenMai")">Thêm khuyến mãi</a>
+                                    <a href="@Url.Action("ThemMoi","QuanLyCTKhuyenMai")">Thêm khuyến mãi</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Quản lý sản phẩm khuyến mãi -->
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý sản phẩm khuyến mãi<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="@Url.Action("Index", "QuanLySPKhuyenMai")">Danh sách sản phẩm khuyến mãi</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ThemMoi","QuanLySPKhuyenMai")">Thêm sản phẩm khuyến mãi</a>
                                 </li>
                             </ul>
                         </li>
@@ -321,9 +334,7 @@
                                 <li>
                                     <a href="@Url.Action("Index", "ThongKeBaoCao")">Thống kê báo cáo</a>
                                 </li>
-                                <li>
-                                    <a href="@Url.Action("ThongKe_BieuDo", "ThongKeBaoCao")">Thống kê dạng biểu đồ</a>
-                                </li>
+                                
                             </ul>
                         </li>
                     </ul>

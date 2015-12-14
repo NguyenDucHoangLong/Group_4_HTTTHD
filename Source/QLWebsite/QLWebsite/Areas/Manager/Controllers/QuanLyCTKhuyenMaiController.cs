@@ -9,21 +9,21 @@ using PagedList.Mvc;
 
 namespace QLWebsite.Areas.Manager.Controllers
 {
-    public class QuanLyKhuyenMaiController : Controller
+    public class QuanLyCTKhuyenMaiController : Controller
     {
         QLWEBSITEEntities db = new QLWEBSITEEntities();
-        // GET: Manager/QuanLyKhuyenMai
+        // GET: Manager/QuanLyCTKhuyenMai
         public ActionResult Index(int? Page)
         {
             int pageNumber = (Page ?? 1);
-            int pageSize = 2;
+            int pageSize = 5;
             return View(db.CTKhuyenMais.ToList().OrderBy(n => n.MaKM).ToPagedList(pageNumber, pageSize));
         }
 
         //Chi tiết
         public ActionResult ChiTiet(int MaKM)
         {
-            //Lấy đối tượng theo mã
+            //Lấy ra đối tượng theo mã
             CTKhuyenMai ctKhuyenMai = db.CTKhuyenMais.SingleOrDefault(n => n.MaKM == MaKM);
             if(ctKhuyenMai == null)
             {
@@ -32,30 +32,24 @@ namespace QLWebsite.Areas.Manager.Controllers
             }
             return View(ctKhuyenMai);
         }
+
         //Thêm mới
         [HttpGet]
         public ActionResult ThemMoi()
         {
-            //Đưa dữ liệu vào dropdownlist
-            ViewBag.MaSP = new SelectList(db.SanPhams.ToList().OrderBy(n => n.TenSP), "MaSP", "TenSP");
             return View();
         }
 
         [HttpPost]
         public ActionResult ThemMoi(FormCollection f)
         {
-            //Đưa dữ liệu vào dropdownlist
-            ViewBag.MaSP = new SelectList(db.SanPhams.ToList().OrderBy(n => n.TenSP), "MaSP", "TenSP");
             CTKhuyenMai ctKhuyenMai = new CTKhuyenMai();
-            ctKhuyenMai.MaKM = int.Parse(f["MaKM"]);
-            ctKhuyenMai.MaSP = int.Parse(f["MaSP"]);
-            ctKhuyenMai.ChietKhau = float.Parse(f["ChietKhau"]);
-            ctKhuyenMai.NgayBD = DateTime.Parse(f["NgayBD"]);
-            ctKhuyenMai.NgayKT = DateTime.Parse(f["NgayKT"]);
+            ctKhuyenMai.TenCTKM = f["TenCTKM"];
+            ctKhuyenMai.NgayBD = DateTime.Parse(f["ngayBD"]);
+            ctKhuyenMai.NgayKT = DateTime.Parse(f["ngayKT"]);
 
             db.CTKhuyenMais.Add(ctKhuyenMai);
             db.SaveChanges();
-
             return View();
         }
 
@@ -63,42 +57,41 @@ namespace QLWebsite.Areas.Manager.Controllers
         [HttpGet]
         public ActionResult ChinhSua(int MaKM)
         {
-
-            //Lấy đối tượng theo mã
+            //Lấy ra đối tượng theo mã
             CTKhuyenMai ctKhuyenMai = db.CTKhuyenMais.SingleOrDefault(n => n.MaKM == MaKM);
-            if(ctKhuyenMai == null)
+            if (ctKhuyenMai == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
             return View(ctKhuyenMai);
         }
+
         [HttpPost]
-        public ActionResult ChinhSua(int MaKM, FormCollection f)
+        public ActionResult ChinhSua(FormCollection f, int MaKM)
         {
 
             CTKhuyenMai ctKhuyenMai = db.CTKhuyenMais.SingleOrDefault(n => n.MaKM == MaKM);
-            ctKhuyenMai.ChietKhau = float.Parse(f["ChietKhau"]);
-            ctKhuyenMai.NgayBD = DateTime.Parse(f["NgayBD"]);
-            ctKhuyenMai.NgayKT = DateTime.Parse(f["NgayKT"]);
+            ctKhuyenMai.TenCTKM = f["TenCTKM"];
+            ctKhuyenMai.NgayBD = DateTime.Parse(f["ngayBD"]);
+            ctKhuyenMai.NgayKT = DateTime.Parse(f["ngayKT"]);
 
             db.SaveChanges();
-
             return RedirectToAction("Index");
         }
 
-        //Xóa chương trình khuyến mãi
+        //Xóa
         [HttpGet]
         public ActionResult Xoa(int MaKM)
         {
+
             //Lấy ra đối tượng theo mã
-           CTKhuyenMai ctKhuyenMai = db.CTKhuyenMais.SingleOrDefault(n => n.MaKM == MaKM);
+            CTKhuyenMai ctKhuyenMai = db.CTKhuyenMais.SingleOrDefault(n => n.MaKM == MaKM);
             if (ctKhuyenMai == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
-
             return View(ctKhuyenMai);
         }
 
@@ -116,7 +109,5 @@ namespace QLWebsite.Areas.Manager.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-    
     }
 }

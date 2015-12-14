@@ -754,14 +754,6 @@
     <Content Include="Areas\Manager\Views\QuanLyLoaiKhachHang\Index.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLyLoaiKhachHang\ChinhSua.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLyLoaiKhachHang\Xoa.cshtml" />
-    <Content Include="Areas\Manager\Views\QuanLyKhuyenMai\Index.cshtml" />
-    <EntityDeploy Include="Models\QLWebsite.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLWebsite.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLWebsite.edmx.diagram">
-      <DependentUpon>QLWebsite.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Login\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Details.cshtml" />
@@ -777,6 +769,22 @@
     <Content Include="Areas\Manager\Views\ThongKeBaoCao\Index.cshtml" />
     <Content Include="Areas\Manager\Views\ThongKeBaoCao\ThongKe.cshtml" />
     <Content Include="Areas\Manager\Views\ThongKeBaoCao\ThongKe_BieuDo.cshtml" />
+    <EntityDeploy Include="Models\QLWebsite.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLWebsite.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLWebsite.edmx.diagram">
+      <DependentUpon>QLWebsite.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Manager\Views\QuanLyCTKhuyenMai\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLyCTKhuyenMai\ChiTiet.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLyCTKhuyenMai\ThemMoi.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLyCTKhuyenMai\ChinhSua.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLyCTKhuyenMai\Xoa.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ChiTiet.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ThemMoi1.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ThemMoi.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\css\bootstrap-theme.css" />
     <Content Include="Scripts\css\bootstrap-theme.min.css" />
@@ -808,13 +816,20 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\Manager\Controllers\ManagerController.cs" />
-    <Compile Include="Areas\Manager\Controllers\QuanLyKhuyenMaiController.cs" />
+    <Compile Include="Areas\Manager\Controllers\QuanLyCTKhuyenMaiController.cs" />
     <Compile Include="Areas\Manager\Controllers\QuanLyLoaiKhachHangController.cs" />
+    <Compile Include="Areas\Manager\Controllers\QuanLySPKhuyenMaiController.cs" />
     <Compile Include="Areas\Manager\Controllers\ThongKeBaoCaoController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaiPost.cs">
+      <DependentUpon>QLWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BinhLuanBaiPost.cs">
+      <DependentUpon>QLWebsite.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BinhLuan_DanhGia.cs">
       <DependentUpon>QLWebsite.tt</DependentUpon>
@@ -864,7 +879,13 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>QLWebsite.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPhamKhuyenMai.cs">
+      <DependentUpon>QLWebsite.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TaiKhoan.cs">
+      <DependentUpon>QLWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThongKe_Result.cs">
       <DependentUpon>QLWebsite.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

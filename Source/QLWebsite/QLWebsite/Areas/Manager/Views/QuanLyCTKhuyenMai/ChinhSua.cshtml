@@ -1,0 +1,59 @@
+﻿@model QLWebsite.Models.CTKhuyenMai
+
+@{
+    ViewBag.Title = "ThemMoi";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+<br />
+<h2>Thêm mới chương trình khuyến mãi</h2>
+
+
+@using (Html.BeginForm(Url.Action("ChinhSua", "QuanLyCTKhuyenMai")))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <input type="hidden" value="@Model.MaKM" name="MaKM" />
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Tên CT khuyến mãi
+            </label>
+            <div class="col-md-10">
+                <input type="text" name="TenCTKM" value="@Model.TenCTKM" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Ngày bắt đầu
+            </label>
+            <div class="col-md-10">
+                <input type="date" name="ngayBD" value="Model.NgayBD"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Ngày kết thúc
+            </label>
+            <div class="col-md-10">
+                <input type="date" name="ngayKT" value="@Model.NgayKT"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Chỉnh sửa" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

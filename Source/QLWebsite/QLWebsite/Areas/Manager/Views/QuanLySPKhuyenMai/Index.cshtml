@@ -1,0 +1,56 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<QLWebsite.Models.SanPhamKhuyenMai>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+}
+
+<br/>
+<p>
+    @Html.ActionLink("Thêm mới", "ThemMoi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           STT
+        </th>
+        <th>
+           Sản phẩm
+        </th>
+        <th>
+           Chương trình khuyến mãi
+        </th>
+        <th>
+           Chiết khấu
+        </th>
+        <th></th>
+    </tr>
+ @{ 
+     var i = 0;
+ }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @{ i++;}
+            @i
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham.TenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTKhuyenMai.TenCTKM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChietKhau)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "ChinhSua", new { @MaKM = item.MaKM, MaSP = item.MaSP }) |
+            @Html.ActionLink("Chi tiết", "ChiTiet", new { @MaKM = item.MaKM, MaSP = item.MaSP }) |
+            @Html.ActionLink("Xóa", "Xoa", new { @MaKM = item.MaKM, MaSP = item.MaSP })
+        </td>
+    </tr>
+}
+
+</table>

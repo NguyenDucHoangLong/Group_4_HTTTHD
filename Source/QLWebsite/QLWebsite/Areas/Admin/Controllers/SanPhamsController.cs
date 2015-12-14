@@ -17,7 +17,7 @@ namespace QLWebsite.Areas.Admin.Controllers
         // GET: Admin/SanPhams
         public ActionResult Index()
         {
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc1).Include(s => s.LoaiSanPham);
+            var sanPhams = db.SanPhams.Include(s => s.MaDanhMuc).Include(s => s.LoaiSanPham);
             return View(sanPhams.ToList());
         }
 
