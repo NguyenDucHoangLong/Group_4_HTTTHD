@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="QLWEBSITE" match-name="BaiPost"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="BinhLuanBaiPost"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="BinhLuan_DanhGia"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="CTDonHang"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="CTKhuyenMai"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="DanhMuc"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="DonHang"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="KhachHang"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="LoaiKH"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="LoaiNV"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="LoaiSanPham"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="NhanVien"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="SanPham"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="SanPhamKhuyenMai"/>
+  <table-filter match-catalog="QLWEBSITE" match-name="TaiKhoan"/>
+</hibernate-reverse-engineering>
