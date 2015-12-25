@@ -8,9 +8,7 @@
 }
 
 <br/>
-<p>
-    @Html.ActionLink("Thêm mới", "ThemMoi")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -54,3 +52,6 @@
 }
 
 </table>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>

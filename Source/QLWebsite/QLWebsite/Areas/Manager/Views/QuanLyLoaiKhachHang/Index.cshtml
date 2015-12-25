@@ -9,9 +9,7 @@
 
 
 <br/>
-<p>
-    @Html.ActionLink("Thêm mới loại khách hàng", "ThemMoi")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -52,6 +50,10 @@
 }
 
 </table>
+
+<p>
+    @Html.ActionLink("Thêm mới loại khách hàng", "ThemMoi")
+</p>
 <div class="MenuTrang">
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
 </div>

@@ -785,6 +785,13 @@
     <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ChiTiet.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ThemMoi1.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ThemMoi.cshtml" />
+    <Content Include="Areas\Manager\Views\SanPhamKhuyenMais\Create.cshtml" />
+    <Content Include="Areas\Manager\Views\SanPhamKhuyenMais\Delete.cshtml" />
+    <Content Include="Areas\Manager\Views\SanPhamKhuyenMais\Details.cshtml" />
+    <Content Include="Areas\Manager\Views\SanPhamKhuyenMais\Edit.cshtml" />
+    <Content Include="Areas\Manager\Views\SanPhamKhuyenMais\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ChinhSua.cshtml" />
+    <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\Xoa.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\css\bootstrap-theme.css" />
     <Content Include="Scripts\css\bootstrap-theme.min.css" />
@@ -819,6 +826,7 @@
     <Compile Include="Areas\Manager\Controllers\QuanLyCTKhuyenMaiController.cs" />
     <Compile Include="Areas\Manager\Controllers\QuanLyLoaiKhachHangController.cs" />
     <Compile Include="Areas\Manager\Controllers\QuanLySPKhuyenMaiController.cs" />
+    <Compile Include="Areas\Manager\Controllers\SanPhamKhuyenMaisController.cs" />
     <Compile Include="Areas\Manager\Controllers\ThongKeBaoCaoController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />

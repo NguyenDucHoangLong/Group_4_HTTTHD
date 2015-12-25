@@ -4,27 +4,45 @@
     ViewBag.Title = "ThemMoi";
     Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
 }
+<script src="~/Scripts/jquery-2.1.4.min.js"></script>
+<script src="~/Scripts/jquery-2.1.4.js"></script>
+<script>
+    function Check() {
+        $.post("http://localhost:1041/Manager/QuanLySPKhuyenMai/CheckName",{makm:$('#MaKM').val(),masp:$('#MaSP').val()},
+            function(data){
+            if(data.Code=="0")
+            {
+                alert("Không thêm dc");
+                return false;
+            }
+            if(data.Code="1")
+            {
+                return true;
+            }
+        }
+    )};
+</script>
 
-<h2>ThemMoi</h2>
+<h2>Thêm sản phẩm khuyến mãi</h2>
+
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>SanPhamKhuyenMai</h4>
         <hr />
         @Html.ValidationSummary(true)
         <div class="form-group">
-            @Html.LabelFor(model => model.MaKM, "MaKM", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MaKM, "Tên khuyến mãi", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaKM", String.Empty)
+                @Html.DropDownList("MaKM",String.Empty)
                 @Html.ValidationMessageFor(model => model.MaKM)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaSP, "MaSP", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MaSP, "Tên sản phẩm", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("MaSP", String.Empty)
                 @Html.ValidationMessageFor(model => model.MaSP)
@@ -32,21 +50,19 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ChietKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ChietKhau, "Chiết khấu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ChietKhau)
+                <input type="number" name="ChietKhau" min="1" max="20"/>
+                @*@Html.EditorFor(model => model.ChietKhau)*@
                 @Html.ValidationMessageFor(model => model.ChietKhau)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Thêm" class="btn btn-default" onclick="return Check();" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
