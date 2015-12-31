@@ -54,9 +54,11 @@
 							<p>Mã sản phẩm:<%=msp %></p>
 							<img src="images/product-details/rating.png" alt="" /> <span>
 								<span><%=sanphamDAO.getProduct(msp).getGiaBan()%> VNĐ</span>
+								<a href="CartServlet?command=insertItem&product_id=<%=msp%>&cartID=<%=System.currentTimeMillis()%>"
+										>
 								<button type="button" class="btn btn-fefault cart">
 									<i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
-								</button>
+								</button></a>
 							</span>
 							<span>Nhà sản xuất:<%=sanphamDAO.getProduct(msp).getNhaSanXuat() %></span><br/>
 							<span>Số lượng hiện còn: <%=sanphamDAO.getProduct(msp).getSlton() %></span>
