@@ -160,7 +160,7 @@
 						<li>Total <span>$61</span></li>
 					</ul>
 					<a class="btn btn-default update" href="">Cập nhật</a> <a
-						class="btn btn-default check_out" href="">Xác nhận thanh toán</a>
+						class="btn btn-default check_out" href="checkout.jsp">Xác nhận thanh toán</a>
 				</div>
 			</div>
 		</div>

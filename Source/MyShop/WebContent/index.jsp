@@ -30,29 +30,15 @@
 		DanhMucDAOImpl danhmucDAO = new DanhMucDAOImpl();
 		String maDanhMuc = request.getParameter("category_id");
 		SanPhamDAOImpl sanphamDAO = new SanPhamDAOImpl();
-		List<SanPham> ds = sanphamDAO.getListProduct();
-		String page1 = "", page2 = "";
-		int start = 0;
-		int end;
-		if (ds.size() < 18) {
-			end = 3;
-		} else {
-			end = ds.size();
-		}
-		if (request.getParameter("start") != null) {
-			page1 = request.getParameter("start");
-			start = Integer.parseInt(page1);
-		}
-		if (request.getParameter("end") != null) {
-			page2 = request.getParameter("end");
-			end = Integer.parseInt(page2);
-		}
-		List<SanPham> list = sanphamDAO.getListProductByPagination(ds, start, end);
+		List<SanPham> ds = null;
+		
 		Cart cart = (Cart) session.getAttribute("cart");
 		if (cart == null) {
 			cart = new Cart();
 			session.setAttribute("cart", cart);
 		}
+		
+
 	%>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="slider.jsp"></jsp:include>
@@ -66,6 +52,24 @@
 					<!--features_items-->
 					<%
 						if (maDanhMuc == null) {
+							ds = sanphamDAO.getListProduct();
+							String page1 = "", page2 = "";
+							int start = 0;
+							int end;
+							if (ds.size() < 18) {
+								end = 9;
+							} else {
+								end = ds.size();
+							}
+							if (request.getParameter("start") != null) {
+								page1 = request.getParameter("start");
+								start = Integer.parseInt(page1);
+							}
+							if (request.getParameter("end") != null) {
+								page2 = request.getParameter("end");
+								end = Integer.parseInt(page2);
+							}
+							List<SanPham> list  = sanphamDAO.getListProductByPagination(ds, start, end);
 					%>
 					<h2 class="title text-center">Danh sách sản phẩm</h2>
 					<%
@@ -89,7 +93,10 @@
 							</div>
 							<div class="choose">
 								<ul class="nav nav-pills nav-justified">
-									<li><a href="#"><i class="fa fa-plus-square"></i>Thêm
+									<li><a
+									href="FavoriteServlet?command=insertItem&product_id=<%=p.getMaSp()%>"
+									>
+									<i class="fa fa-plus-square"></i>Thêm
 											vào yêu thích</a></li>
 									<li><a href="detail.jsp?product_id=<%=p.getMaSp()%>"><i
 											class="fa fa-plus-square"></i>Xem Chi tiết</a></li>
@@ -101,10 +108,29 @@
 						}
 						} else {
 							String tenDanhMuc = danhmucDAO.getCategoryById(Integer.parseInt(maDanhMuc)).getTenDanhMuc();
+							ds = sanphamDAO.getListProductByCategory(Integer.parseInt(maDanhMuc));
+							String page1 = "", page2 = "";
+							int start = 0;
+							int end;
+							if (ds.size() < 18) {
+								end = 6;
+							} else {
+								end = ds.size();
+							}
+							if (request.getParameter("start") != null) {
+								page1 = request.getParameter("start");
+								start = Integer.parseInt(page1);
+							}
+							if (request.getParameter("end") != null) {
+								page2 = request.getParameter("end");
+								end = Integer.parseInt(page2);
+							}
+							List<SanPham> list  = sanphamDAO.getListProductByPagination(ds, start, end);
+							
 					%>
 					<h2 class="title text-center"><%=tenDanhMuc%></h2>
 					<%
-						for (SanPham sp : sanphamDAO.getListProductByCategory(Integer.parseInt(maDanhMuc))) {
+						for (SanPham sp : list ) {
 					%>
 					<div class="col-sm-4">
 						<div class="product-image-wrapper">
@@ -148,31 +174,30 @@
 						}
 						}
 					%>
-     </div>
-					<ul class="pagination">
-						<%
+				</div>
+				<ul class="pagination">
+					<%
 							int a, b;
-							int limit = ds.size() / 3;
-							if (limit * 3 < ds.size()) {
+							int limit = ds.size() / 6;
+							if (limit * 6 < ds.size()) {
 								limit += 1;
 							}
 							for (int i = 1; i <= limit; i++) {
-								a = (i - 1) * 3;
-								b = i * 3;
+								a = (i - 1) * 6;
+								b = i * 6;
 								if (b > ds.size()) {
 									b = ds.size();
 								}
 						%>
-						<li class="active"><a
-							href="index.jsp?start=<%=a%>&end=<%=b%>"><%=i%></a></li>
-						<%
+					<li class="active"><a href="index.jsp?start=<%=a%>&end=<%=b%>"><%=i%></a></li>
+					<%
 							}
 						%><li>
-					</ul>
-				</div>
-				<!--features_items-->
+				</ul>
 			</div>
+			<!--features_items-->
 		</div>
+	</div>
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
 

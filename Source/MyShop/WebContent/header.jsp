@@ -59,7 +59,7 @@
 									Xin chào, <%=session.getAttribute("username") %><span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
-									<li><a href="">Sửa thông tin</a></li>
+									<li><a href="infoacount.jsp">Sửa thông tin</a></li>
 									<li><a href="LoginServlet?command=logout">
 									Đăng xuất</a></li>
 <%-- 									<%}else{ %> --%>
@@ -88,9 +88,13 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
+							<% if(session.getAttribute("username") != null) {%>
+								<li><a href="infoacount.jsp"><i class="fa fa-user"></i>Tài khoản</a></li>
+								<%}else{ %>
 								<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-								<li><a href="#"><i class="fa fa-star"></i>Quà tặng</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>
+								<%} %>
+								<li><a href="favorite.jsp"><i class="fa fa-star"></i>Sản phẩm yêu thích</a></li>
+								<li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i>
 										Đơn hàng</a></li>
 								<li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i>
 										Giỏ hàng</a></li>
