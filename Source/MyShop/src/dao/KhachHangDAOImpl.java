@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import entities.KhachHang;
+import entities.TaiKhoan;
 
 
 public class KhachHangDAOImpl implements KhachHangDAO {
@@ -59,6 +60,29 @@ public class KhachHangDAOImpl implements KhachHangDAO {
 			tx = session.beginTransaction();
 			kh = (KhachHang) session.createQuery("FROM KhachHang ORDER BY MaKH DESC").setMaxResults(1).uniqueResult();
 		}catch(HibernateException e){
+			if(tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return kh;
+	}
+	
+	public KhachHang getKhachHangByUsername(String user) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = null;
+		KhachHang kh = null;
+		TaiKhoan tk = null;
+		
+		try{
+			tx = session.beginTransaction();
+			tk = (TaiKhoan) session.createQuery("FROM TaiKhoan WHERE TenTaiKhoan = '"+user+"'").setMaxResults(1).uniqueResult();
+			if(tk != null)
+			{
+				kh = (KhachHang) session.createQuery("FROM KhachHang WHERE MaND = '"+tk.getMaNd()+"'").setMaxResults(1).uniqueResult();
+			}
+			}catch(HibernateException e){
 			if(tx != null)
 				tx.rollback();
 			e.printStackTrace();

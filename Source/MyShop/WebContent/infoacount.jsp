@@ -1,4 +1,4 @@
-<%@page import="entities.KhachHang"%>
+<%-- <%@page import="entities.KhachHang"%>
 <%@page import="dao.KhachHangDAOImpl"%>
 <%@page import="dao.TaiKhoanDAOImpl"%>
 <%@page import="entities.TaiKhoan"%>
@@ -109,4 +109,4 @@ String  password_err = "", email_err = "", username = "",
 	</section><!--/form-->
 		<jsp:include page="footer.jsp"></jsp:include>
 </body>
-</html>
+</html> --%>

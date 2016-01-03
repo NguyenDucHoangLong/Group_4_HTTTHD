@@ -4,9 +4,9 @@
 <hibernate-configuration>
  <session-factory>
   <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-  <property name="hibernate.connection.password">12345</property>
+  <property name="hibernate.connection.password">admin</property>
   <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=QLWEBSITE</property>
-  <property name="hibernate.connection.username">hoanglong</property>
+  <property name="hibernate.connection.username">admin1</property>
   <property name="hibernate.default_catalog">QLWEBSITE</property>
   <property name="hibernate.default_schema">dbo</property>
   <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>

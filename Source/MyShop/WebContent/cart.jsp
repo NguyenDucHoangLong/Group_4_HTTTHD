@@ -107,6 +107,8 @@
 	<!--/#cart_items -->
 	<section id="do_action">
 	<div class="container">
+						
+<!-- 
 		<div class="heading">
 			<h3>What would you like to do next?</h3>
 			<p>Choose if you have a discount code or reward points you want
@@ -150,19 +152,45 @@
 					<a class="btn btn-default update" href="">Get Quotes</a> <a
 						class="btn btn-default check_out" href="">Continue</a>
 				</div>
-			</div>
+			</div> -->
+			
+			<form action="CheckOutServlet" method="post">
 			<div class="col-sm-6">
+			<p>Thông tin giao hàng</p>
+			<div class="form-group">
+		    <label class="control-label col-sm-6" for="email">Tên Người Nhận:</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="col-sm-6" placeholder="Tên người nhận" name="nguoi_nhan" required>
+			</div>
+		  </div>
+			<div class="form-group">
+		    <label class="control-label col-sm-6" for="email">Địa Chỉ Giao Hàng:</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="col-sm-6" placeholder="Địa chỉ giao hàng" name="nguoi_nhan" required>
+			</div>
+		  </div>
+			<div class="form-group">
+		    <label class="control-label col-sm-6" for="email">Số Điện Thoại:</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="col-sm-6" placeholder="Điện thoại liên hệ"
+								name="dien_thoai" required>
+			</div>
+		  </div>
+		  </div>
+			<%-- <div class="col-sm-6">
 				<div class="total_area">
 					<ul>
-						<li>Cart Sub Total <span>$59</span></li>
-						<li>Eco Tax <span>$2</span></li>
-						<li>Shipping Cost <span>Free</span></li>
-						<li>Total <span>$61</span></li>
+						<li>Tổng tiền sản phẩm: <span><%=cart.totalPrice %></span></li>
+						<li>Thuế VAT: <span></span>0</li>
+						<li>Phí vận chuyển: <span>0</span></li>
+						<li>Tổng tiền: <span>$61</span></li>
 					</ul>
-					<a class="btn btn-default update" href="">Cập nhật</a> <a
-						class="btn btn-default check_out" href="checkout.jsp">Xác nhận thanh toán</a>
-				</div>
+			</div> --%>
+			<div class="col-sm-10" style="padding: 20px 30px;">
+			<input type="submit" name="command" class="btn btn-success" value="Thanh Toán"/>
 			</div>
+			</form>
+			<!-- <a class="btn btn-default check_out" href="checkout.jsp">Xác nhận thanh toán</a> -->
 		</div>
 	</div>
 	</section>

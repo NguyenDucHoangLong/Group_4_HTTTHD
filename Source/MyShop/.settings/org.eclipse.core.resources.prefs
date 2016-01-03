@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/controller/CheckOutServlet.java=UTF-8
 encoding//src/controller/LoginServlet.java=UTF-8
 encoding//src/controller/RegisterServlet.java=UTF-8
 encoding//src/test/test.java=UTF-8

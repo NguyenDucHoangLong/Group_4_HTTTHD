@@ -1,4 +1,4 @@
-<%@page import="dao.SanPhamDAOImpl"%>
+<%-- <%@page import="dao.SanPhamDAOImpl"%>
 <%@page import="dao.KhachHangDAOImpl"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="entities.GiaSach"%>
@@ -104,4 +104,4 @@
 	<!--/#do_action -->
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
-</html>
+</html> --%>

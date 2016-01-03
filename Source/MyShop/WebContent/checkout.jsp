@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="entities.SanPham"%>
 <%@page import="entities.Cart"%>
 <%@page import="java.util.Map"%>
@@ -26,44 +27,29 @@
 <body>
 
 	<%
+
 		Cart cart = (Cart) session.getAttribute("cart");
+		//JOptionPane.showMessageDialog(null, cart);
+	%>
+	<h1>Chua null</h1>
+	<% 
 		if (cart == null) {
 			cart = new Cart();
 			session.setAttribute("cart", cart);
 		}
 		TreeMap<SanPham, Integer> list = cart.getListProduct();
-	%>
+		
+		%>
 
 	<jsp:include page="header.jsp"></jsp:include>
 
 	<section id="cart_items">
 	<div class="container">
-
-		<div class="shopper-informations">
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="shopper-info">
-						<p>Thông tin giao hàng</p>
-						<form action="CheckOutServlet" method="post">
-							<input type="text" placeholder="Địa chỉ giao hàng" name="dia_chi">
-							<input type="text" placeholder="Điện thoại liên hệ"
-								name="dien_thoai">
-							<button type="submit" class="btn btn-primary">Xác nhận
-								thanh toán</button>
-						</form>
-						<a class="btn btn-primary" href="CartServlet?command=cancleItem">Hủy
-							đơn hàng</a>
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-		<div class="review-payment">
+<div class="review-payment">
 			<h2>Thông tin đơn hàng</h2>
 		</div>
 
-		<div class="table-responsive cart_info">
+		<div class="table cart_info">
 			<table class="table table-condensed">
 				<thead>
 					<tr class="cart_menu">
@@ -76,7 +62,10 @@
 					</tr>
 				</thead>
 				<tbody>
+				
 					<%
+
+					String username = (String)session.getAttribute("username");
 						for (Map.Entry<SanPham, Integer> entry : list.entrySet()) {
 					%>
 					<tr>
@@ -120,7 +109,40 @@
 				</tbody>
 			</table>
 		</div>
+		<%-- <h1>this is <%=list.entrySet().toArray().toString() %></h1> --%>
+		<div class="shopper-informations">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="shopper-info">
+					
+				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post"> 
+					<%
+					int dem=0;
+					for (Map.Entry<SanPham, Integer> entry : list.entrySet()){
+						dem++;
+						%>
+						<input type="hidden" name="item_name_<%=dem%>" value="<%= entry.getKey().getMaSp()%>">
+						<input type="hidden" name="quantity_<%=dem%>" value="<%= entry.getValue()%>">
+						<input type="hidden" name="amount_<%=dem%>" value="<%=entry.getKey().getGiaBan()* 0.000044%>">
+						<% } %>
+						   <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="rm" value="2">
+                <input type="hidden" name="business" value="htnamitus-facilitator@gmail.com">
+				
+            <input type="hidden" name="return" value="http://localhost:8080/MyShop/PaypalResponse.jsp">
+                <input type="hidden" name="cancel_return" value="http://localhost:8080/MyShop/PaypalResponseCancel.jsp">
+                <input type="hidden" name="upload" value="1">
+                <input type="image" name="submit" border="0" src="https://www.paypal.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
+                <img alt="" border="0" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif">
+        </form>	
+				<a href="http://localhost:8080/MyShop/PaypalResponse.jsp">Test Thanh Toan</a>
+					</div>
+				</div>
 
+
+			</div>
+		</div>
+		
 	</div>
 	</section>
 	<!--/#cart_items-->

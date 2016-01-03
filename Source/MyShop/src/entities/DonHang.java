@@ -79,8 +79,8 @@ public class DonHang implements java.io.Serializable {
 		return this.ngayDat;
 	}
 
-	public void setNgayDat(Date ngayDat) {
-		this.ngayDat = ngayDat;
+	public void setNgayDat(Date date) {
+		this.ngayDat = date;
 	}
 
 	@Temporal(TemporalType.DATE)

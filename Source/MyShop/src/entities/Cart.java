@@ -1,7 +1,9 @@
 package entities;
 
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
 
 public class Cart {
 	private TreeMap<SanPham, Integer> listProduct;
@@ -23,12 +25,15 @@ public class Cart {
 	public long getCartID() {
 		return cartID;
 	}
+	
+	
 	public void setCartID(long cartID) {
 		this.cartID = cartID;
 	}
 	
 	public void insertToCart(SanPham sp, int quantity)
 	{
+		totalPrice += sp.getGiaBan();
 		boolean check = listProduct.containsKey(sp);
 		if(check){
 			int old_quantity = listProduct.get(sp);
@@ -55,6 +60,8 @@ public class Cart {
 		boolean check = listProduct.containsKey(sp);
 		if(check == true)
 		{
+
+			totalPrice -= sp.getGiaBan();
 			int old_quantity = listProduct.get(sp);
 			quantity = old_quantity - quantity;
 			if(quantity <= 0)
@@ -73,11 +80,12 @@ public class Cart {
 			listProduct.remove(sp);
 		}
 	}
-	
+	public int totalPrice = 0;
 	public int countItem(){
 		int count = 0;
 		for(Map.Entry<SanPham, Integer> list: listProduct.entrySet()){
 			count += list.getValue();
+			
 		}
 		return count;
 	}
@@ -86,6 +94,7 @@ public class Cart {
 		double count = 0;
 		for(Map.Entry<SanPham, Integer> list:listProduct.entrySet()){
 			count += list.getValue() * list.getKey().getGiaBan();
+			totalPrice += totalPrice + list.getValue() * list.getKey().getGiaBan();
 		}
 		return count;
 	}
