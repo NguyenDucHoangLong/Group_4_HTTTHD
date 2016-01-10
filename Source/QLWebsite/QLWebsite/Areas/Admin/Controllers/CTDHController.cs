@@ -30,9 +30,11 @@ namespace QLWebSite.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            DonHang donhang = db.DonHangs.Find(madh);
+            donhang.TongTien = donhang.TongTien - ctdonhang.DonGia;
             db.CTDonHangs.Remove(ctdonhang);
             db.SaveChanges();
-            return View("Index", new { id=madh });
+            return RedirectToAction("Index", new { id=madh });
         }
         protected override void Dispose(bool disposing)
         {

@@ -34,7 +34,8 @@
                                     <td>@item.SoLuong</td>
                                     <td>@item.DonGia</td>
                                     <td>
-                                        @Html.ActionLink("Xóa", "Delete", "CTDH", new { madh = Model.FirstOrDefault().MaDH, masp = Model.FirstOrDefault().MaSP })
+                                        <a href="/Admin/CTDH/Delete/?madh=@item.MaDH&&masp=@item.MaSP">Xóa</a>
+                                        @*@Html.ActionLink("Xóa", "Delete", "CTDH", new { madh = item.MaDH, masp = item.MaSP })*@
                                     </td>
                                 </tr>
                             }
