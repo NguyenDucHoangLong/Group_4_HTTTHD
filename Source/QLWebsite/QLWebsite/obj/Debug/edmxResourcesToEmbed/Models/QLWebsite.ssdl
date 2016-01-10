@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QLWEBSITEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="QLWEBSITEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="BaiPost">
     <Key>
       <PropertyRef Name="MaPost" />
@@ -8,6 +8,7 @@
     <Property Name="NoiDung" Type="nvarchar(max)" />
     <Property Name="ThoiGianPost" Type="datetime" />
     <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrangThai" Type="bit" />
     <Property Name="NguoiPost" Type="int" />
   </EntityType>
   <EntityType Name="BinhLuan_DanhGia">
@@ -32,6 +33,7 @@
     <Property Name="NguoiBinhLuan" Type="int" Nullable="false" />
     <Property Name="ThoiGianBinhLuan" Type="datetime" Nullable="false" />
     <Property Name="NoiDungBinhLuan" Type="nvarchar(max)" />
+    <Property Name="TrangThai" Type="bit" />
   </EntityType>
   <EntityType Name="CTDonHang">
     <Key>
@@ -121,6 +123,16 @@
     <Property Name="DiaChi" Type="nvarchar" MaxLength="30" />
     <Property Name="SDT" Type="nvarchar" MaxLength="12" />
     <Property Name="LoaiNV" Type="int" />
+  </EntityType>
+  <EntityType Name="PhanHoi">
+    <Key>
+      <PropertyRef Name="MaPhanHoi" />
+    </Key>
+    <Property Name="MaPhanHoi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChuDe" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrangThai" Type="bit" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>
@@ -350,6 +362,7 @@
     <EntitySet Name="LoaiNV" EntityType="Self.LoaiNV" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanHoi" EntityType="Self.PhanHoi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPhamKhuyenMai" EntityType="Self.SanPhamKhuyenMai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />

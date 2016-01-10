@@ -11,6 +11,7 @@
     <Property Name="NguoiPost" Type="Int32" />
     <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_BaiPost_TaiKhoan" FromRole="BaiPost" ToRole="TaiKhoan" />
     <NavigationProperty Name="BinhLuanBaiPosts" Relationship="Self.FK_BinhLuanBaiPost_BaiPost" FromRole="BaiPost" ToRole="BinhLuanBaiPost" />
+    <Property Name="TrangThai" Type="Boolean" />
   </EntityType>
   <EntityType Name="BinhLuan_DanhGia">
     <Key>
@@ -38,6 +39,7 @@
     <Property Name="NoiDungBinhLuan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BaiPost" Relationship="Self.FK_BinhLuanBaiPost_BaiPost" FromRole="BinhLuanBaiPost" ToRole="BaiPost" />
     <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_BinhLuanBaiPost_TaiKhoan" FromRole="BinhLuanBaiPost" ToRole="TaiKhoan" />
+    <Property Name="TrangThai" Type="Boolean" />
   </EntityType>
   <EntityType Name="CTDonHang">
     <Key>
@@ -437,6 +439,7 @@
       <Parameter Name="NgayKetThuc" Mode="In" Type="DateTime" />
       <Parameter Name="TinhTrangDonHang" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="PhanHois" EntityType="QLWEBSITEModel.PhanHoi" />
   </EntityContainer>
   <ComplexType Name="ThongKe_Result">
     <Property Type="Int32" Name="MaDH" Nullable="false" />
@@ -446,4 +449,14 @@
     <Property Type="Int32" Name="TinhTrangDonHang" Nullable="true" />
     <Property Type="Decimal" Name="TongTien" Nullable="true" Precision="18" Scale="0" />
   </ComplexType>
+  <EntityType Name="PhanHoi">
+    <Key>
+      <PropertyRef Name="MaPhanHoi" />
+    </Key>
+    <Property Name="MaPhanHoi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+  </EntityType>
 </Schema>

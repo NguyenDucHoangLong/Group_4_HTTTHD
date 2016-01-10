@@ -42,6 +42,7 @@ namespace QLWebsite.Models
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<SanPhamKhuyenMai> SanPhamKhuyenMais { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public virtual DbSet<PhanHoi> PhanHois { get; set; }
     
         public virtual ObjectResult<ThongKe_Result> ThongKe(Nullable<System.DateTime> ngayBatDau, Nullable<System.DateTime> ngayKetThuc, Nullable<int> tinhTrangDonHang)
         {

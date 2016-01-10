@@ -12,7 +12,7 @@ namespace QLWebsite.Areas.Admin.Controllers
         // GET: /Admin/Admin/
         public ActionResult Index()
         {
-            if (Session["user"] == null)
+            if (Session["user"] == null || (Session["quyen"].ToString() != "2" && Session["quyen"].ToString() != "1"))
                 return RedirectToAction("Login", "Login");
             else
                 return View();

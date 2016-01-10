@@ -142,3 +142,12 @@ D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebs
 D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.pdb
 D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.dll
 D:\Học tập\Học tập\HK1_N4\HTTT_HD\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.pdb
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.dll.config
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.dll
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\QLWebsite.pdb
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\Newtonsoft.Json.dll
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.csprojResolveAssemblyReference.cache
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.dll
+C:\Users\DRAGON\Documents\GitHub\Group_4_HTTTHD\Source\QLWebsite\QLWebsite\obj\Debug\QLWebsite.pdb

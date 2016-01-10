@@ -727,12 +727,9 @@
     <Content Include="Assets\admin\less\sb-admin-2.less" />
     <Content Include="Assets\admin\less\variables.less" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_AdminDefault.cshtml" />
     <Content Include="Areas\Manager\Views\web.config" />
     <Content Include="Areas\Manager\Views\Manager\Index.cshtml" />
     <Content Include="Areas\Manager\Views\Shared\_ManagerDefault.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLyLoaiKhachHang\ThemMoi.cshtml" />
     <Content Include="Models\QLWebsite.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -754,18 +751,6 @@
     <Content Include="Areas\Manager\Views\QuanLyLoaiKhachHang\Index.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLyLoaiKhachHang\ChinhSua.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLyLoaiKhachHang\Xoa.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Export\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Import\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
     <Content Include="Areas\Manager\Views\ThongKeBaoCao\Index.cshtml" />
     <Content Include="Areas\Manager\Views\ThongKeBaoCao\ThongKe.cshtml" />
     <Content Include="Areas\Manager\Views\ThongKeBaoCao\ThongKe_BieuDo.cshtml" />
@@ -792,6 +777,36 @@
     <Content Include="Areas\Manager\Views\SanPhamKhuyenMais\Index.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\ChinhSua.cshtml" />
     <Content Include="Areas\Manager\Views\QuanLySPKhuyenMai\Xoa.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiPost\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiPost\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiPost\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiPost\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuanBaiPost\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CTDH\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Fillter.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Export\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Import\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Fillter.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoi\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoi\Fillter.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoi\Reply.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Fillter.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminDefault.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\css\bootstrap-theme.css" />
     <Content Include="Scripts\css\bootstrap-theme.min.css" />
@@ -818,10 +833,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaiPostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BinhLuanBaiPostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CTDHController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DonHangController.cs" />
     <Compile Include="Areas\Admin\Controllers\ExportController.cs" />
     <Compile Include="Areas\Admin\Controllers\ImportController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhanHoiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\Manager\Controllers\ManagerController.cs" />
     <Compile Include="Areas\Manager\Controllers\QuanLyCTKhuyenMaiController.cs" />
     <Compile Include="Areas\Manager\Controllers\QuanLyLoaiKhachHangController.cs" />
@@ -867,6 +887,9 @@
       <DependentUpon>QLWebsite.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NhanVien.cs">
+      <DependentUpon>QLWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhanHoi.cs">
       <DependentUpon>QLWebsite.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QLWebsite.Context.cs">

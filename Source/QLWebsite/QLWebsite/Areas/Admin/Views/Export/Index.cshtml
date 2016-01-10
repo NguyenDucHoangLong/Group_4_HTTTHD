@@ -11,12 +11,21 @@
                 <form action="/Export/ExportToExcel" method="post">
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            @Html.TextBox("ExcelFilePath")
-                        @*</div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">*@
-                            <input type="submit" value="Export" class="btn btn-default" />
+                            <div class="form-group">
+                                Tên file @Html.TextBox("ExcelFilePath")
+                            </div>
+                            <div class="form-group">
+                                Loại SP
+                                <select name="LoaiSP">
+                                    <option value="0">All</option>
+                                    <option value="1">Sách</option>
+                                    <option value="2">DVD</option>
+                                    <option value="3">Dụng cụ học tập</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Export" class="btn btn-default" />
+                            </div>
                         </div>
                     </div>
                 </form>

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="BaiPosts">
       <EntityTypeMapping TypeName="QLWEBSITEModel.BaiPost">
         <MappingFragment StoreEntitySet="BaiPost">
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="MaPost" ColumnName="MaPost" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
           <ScalarProperty Name="ThoiGianPost" ColumnName="ThoiGianPost" />
@@ -26,6 +27,7 @@
     <EntitySetMapping Name="BinhLuanBaiPosts">
       <EntityTypeMapping TypeName="QLWEBSITEModel.BinhLuanBaiPost">
         <MappingFragment StoreEntitySet="BinhLuanBaiPost">
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="MaPost" ColumnName="MaPost" />
           <ScalarProperty Name="NguoiBinhLuan" ColumnName="NguoiBinhLuan" />
           <ScalarProperty Name="ThoiGianBinhLuan" ColumnName="ThoiGianBinhLuan" />
@@ -182,5 +184,16 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="ThongKe_TiLeDonHang" FunctionName="QLWEBSITEModel.Store.ThongKe_TiLeDonHang" />
+    <EntitySetMapping Name="PhanHois">
+      <EntityTypeMapping TypeName="QLWEBSITEModel.PhanHoi">
+        <MappingFragment StoreEntitySet="PhanHoi">
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ChuDe" ColumnName="ChuDe" />
+          <ScalarProperty Name="MaPhanHoi" ColumnName="MaPhanHoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

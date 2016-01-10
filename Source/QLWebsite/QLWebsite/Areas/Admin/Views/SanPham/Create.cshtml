@@ -1,0 +1,126 @@
+﻿@model QLWebsite.Models.SanPham
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminDefault.cshtml";
+}
+
+<script src=" ~/Scripts/jquery-2.1.4.intellisense.js"></script>
+<script src=" ~/Scripts/jquery-2.1.4.js"></script>
+<script src=" ~/Scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    function Check() {
+        if ($('#tensp').val() == "") {
+            alert('Nhập tên sản phẩm');
+            return false;
+        }
+        else {
+            $.post("/Admin/SanPham/CheckName", { "tensp": $('#tensp').val() },
+            function (data) {
+                if (data.Code == '1') {
+                    alert('Tên sản phẩm đã bị trùng');
+                    return false;
+                }
+                return true;
+            });
+        }
+    };
+    function Check1() {
+        if ($('#tensp').val() == "" || $('#gia').val() == "" || $('#slton').val() == "" || $('#nhasx').val() == "" || $('#mota').val() == "" || $('#hinh').val() == "") {
+            alert("Chưa nhập đầy đủ thông tin");
+            return false;
+        }
+        return true;
+    };
+</script>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Thêm sản phẩm</h3>
+            </div>
+
+
+            <form action="/Admin/SanPham/Create" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true)
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Tên sản phẩm</label>
+                        <div class="col-md-10">
+                            <input type="text" id="tensp" name="TenSP" maxlength="100" onkeyup="return Check();" onchange="=return Check();"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Loại sản phẩm</label>
+                        <div class="col-md-10">
+                            <select name="LoaiSP">
+                                <option value="1">Sách</option>
+                                <option value="2">DVD</option>
+                                <option value="3">Dụng cụ học tập</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Giá bán</label>
+                        <div class="col-md-10">
+                            <input type="text" id="gia" name="GiaBan" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaDanhMuc, "Danh mục", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("MaDanhMuc", String.Empty)
+                            @Html.ValidationMessageFor(model => model.DanhMuc)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Số lượng tồn</label>
+                        <div class="col-md-10">
+                            <input type="number" id="slton" name="SLTon" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Nhà sản xuất</label>
+                        <div class="col-md-10">
+                            <input type="text" id="nhasx" name="NhaSanXuat" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Mô tả</label>
+                        <div class="col-md-10">
+                            <input type="text" id="mota" name="MoTa"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Hình ảnh</label>
+                        <div class="col-md-10">
+                            <input type="text" id="hinh" name="HinhAnh" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Thêm" class="btn btn-default" onclick="return Check1();"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

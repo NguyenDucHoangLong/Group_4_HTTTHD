@@ -20,15 +20,37 @@ namespace QLWebsite.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult CheckLogin(string email,string password)
+        public ActionResult CheckLogin(string username,string password)
         {
-            Session["user"] = email;
-            return RedirectToAction("Index","Admin");
+            TaiKhoan taikhoan = db.TaiKhoans.Where(s => s.TenTaiKhoan == username && s.MatKhau == password).FirstOrDefault();
+            if(taikhoan==null || (taikhoan.Quyen!=1 && taikhoan.Quyen!=2))
+            {
+                ModelState.AddModelError("fail", "Tên đăng nhập hoặc mật khẩu không đúng");
+                return Redirect("/Admin/Login/Login");
+            }
+            else
+            {
+                Session["user"] = username;
+                Session["quyen"] = taikhoan.Quyen;
+                if(taikhoan.Quyen==2)
+                    return RedirectToAction("Index", "Admin");
+                else
+                    return RedirectToAction("Index", "Manager","Manager");
+            }
         }
         /// tài khoản
         public ActionResult Index(int page=1, int pageSize=10)
         {
             return View(db.TaiKhoans.OrderBy(s => s.ID).ToPagedList(page, pageSize));
+        }
+
+        public ActionResult Fillter(string quyen, int page = 1, int pageSize = 10)
+        {
+            int id = int.Parse(quyen);
+            if (id == 0)
+                return RedirectToAction("Index");
+            var taikhoans = db.TaiKhoans.Where(s=>s.Quyen == id).OrderBy(s => s.ID).ToPagedList(page, pageSize);
+            return View(taikhoans);
         }
 
         // GET: /Admin/Default1/Details/5
@@ -57,7 +79,7 @@ namespace QLWebsite.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TenTaiKhoan,MatKhau,TrangThai,Quyen,MaND")] TaiKhoan taikhoan)
+        public ActionResult Create([Bind(Include = "TenTaiKhoan,MatKhau,TrangThai,Quyen,MaND,Email")] TaiKhoan taikhoan)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +111,7 @@ namespace QLWebsite.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,TenTaiKhoan,MatKhau,TrangThai,Quyen,MaND")] TaiKhoan taikhoan)
+        public ActionResult Edit([Bind(Include = "ID,TenTaiKhoan,MatKhau,TrangThai,Quyen,MaND,Email")] TaiKhoan taikhoan)
         {
             if (ModelState.IsValid)
             {
@@ -124,6 +146,14 @@ namespace QLWebsite.Areas.Admin.Controllers
             db.TaiKhoans.Remove(taikhoan);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult CheckName(string username)
+        {
+            TaiKhoan taikhoan = db.TaiKhoans.Where(s => s.TenTaiKhoan == username).FirstOrDefault();
+            var respone = new { Code = "0", Mgs = "false" };
+            if (taikhoan != null)
+                respone = new { Code = "1", Mgs = "true" };
+            return Json(respone, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

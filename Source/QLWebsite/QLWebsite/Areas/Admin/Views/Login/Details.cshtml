@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Areas/Manager/Views/Shared/_ManagerDefault.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminDefault.cshtml";
 }
 <div class="row">
     <div class="col-lg-12">
@@ -52,11 +52,18 @@
                         @Html.DisplayFor(model => model.MaND)
                     </dd>
 
+                    <dt>
+                        Email
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
                 </dl>
             </div>
             <p>
-                @Html.ActionLink("Sửa", "Edit", new { id = Model.ID }) |
-                @Html.ActionLink("Quay lại", "Index")
+                @Html.ActionLink("Sửa", "Edit", new { id = Model.ID })
             </p>
             </div>
         </div>

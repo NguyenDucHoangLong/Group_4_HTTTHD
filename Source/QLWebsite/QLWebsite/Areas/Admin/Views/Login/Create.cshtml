@@ -5,6 +5,35 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminDefault.cshtml";
 }
 
+<script src=" ~/Scripts/jquery-2.1.4.intellisense.js"></script>
+<script src=" ~/Scripts/jquery-2.1.4.js"></script>
+<script src=" ~/Scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    function Check() {
+        if ($('#username').val() == "") {
+            alert('Nhập tên đăng nhập');
+            return false;
+        }
+        else {
+            $.post("/Admin/Login/CheckName", { "username": $('#username').val() },
+            function (data) {
+                if (data.Code == '1') {
+                    alert('Tên đăng nhập bị trùng');
+                    return false;
+                }
+                return true;
+            });
+        }
+    };
+    function Check1() {
+        if ($('#username').val() == "" || $('#pass').val() == "" || $('#mand').val() == "" || $('#email').val() == "") {
+            alert("Chưa nhập đầy đủ thông tin");
+            return false;
+        }
+        return true;
+    };
+</script>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -12,8 +41,7 @@
                 <h3>Thêm tài khoản</h3>
             </div>
 
-            @using (Html.BeginForm())
-            {
+            <form action="/Admin/Login/Create" method="post">
                 @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
@@ -21,56 +49,62 @@
                     @Html.ValidationSummary(true)
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.TenTaiKhoan, new { @class = "control-label col-md-2" })
+                        <label class="control-label col-md-2">Tên tài khoản</label>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.TenTaiKhoan)
-                            @Html.ValidationMessageFor(model => model.TenTaiKhoan)
+                            <input type="text" id="username" name="TenTaiKhoan" onkeyup="return Check();" onchange="return Check();"/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.MatKhau, new { @class = "control-label col-md-2" })
+                        <label class="control-label col-md-2">Mật khẩu</label>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.MatKhau)
-                            @Html.ValidationMessageFor(model => model.MatKhau)
+                            <input type="password" id="pass" name="MatKhau" />
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.TrangThai, new { @class = "control-label col-md-2" })
+                        <label class="control-label col-md-2">Trạng thái</label> 
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.TrangThai)
-                            @Html.ValidationMessageFor(model => model.TrangThai)
+                            <select name="TrangThai">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Quyen, new { @class = "control-label col-md-2" })
+                        <label class="control-label col-md-2">Quyền</label> 
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Quyen)
-                            @Html.ValidationMessageFor(model => model.Quyen)
+                            <select name="Quyen">
+                                <option value="4">Customer</option>
+                                <option value="3">Employee</option>
+                                <option value="2">Admin</option>
+                                <option value="1">Manager</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.MaND, new { @class = "control-label col-md-2" })
+                        <label class="control-label col-md-2">Mã ND</label> 
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.MaND)
-                            @Html.ValidationMessageFor(model => model.MaND)
+                            <input type="number" id="mand" name="MaND" min="1" />
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Email</label>
+                        <div class="col-md-10">
+                            <input type="email" id="email" name="Email" />
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Thêm" class="btn btn-default" />
+                            <input type="submit" value="Thêm" class="btn btn-default" onclick="return Check1();" />
                         </div>
                     </div>
                 </div>
-            }
-
-            <div>
-                @Html.ActionLink("Quay lại", "Index")
-            </div>
-            </div>
+            </form>
+            
         </div>
     </div>
+</div>

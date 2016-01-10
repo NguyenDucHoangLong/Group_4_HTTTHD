@@ -1,0 +1,50 @@
+﻿@model QLWebsite.Models.BaiPost
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminDefault.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Chi tiết nội dung bản tin</h3>
+            </div>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Nộ dung
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NoiDung)
+                    </dd>
+
+                    <dt>
+                        Hình ảnh
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HinhAnh)
+                    </dd>
+
+                    <dt>
+                        Tài khoản
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TaiKhoan.TenTaiKhoan)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Sửa", "Edit", new { id = Model.MaPost }) |
+                @Html.ActionLink("Khóa bản tin này", "LogPost", new { id = Model.MaPost }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = Model.MaPost })
+            </p>
+        </div>
+    </div>
+</div>

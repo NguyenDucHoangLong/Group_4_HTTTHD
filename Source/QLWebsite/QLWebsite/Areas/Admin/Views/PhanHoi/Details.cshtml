@@ -1,0 +1,48 @@
+﻿@model QLWebsite.Models.PhanHoi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminDefault.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Chi tiết nội dung bản tin</h3>
+            </div>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Chủ đề
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ChuDe)
+                    </dd>
+
+                    <dt>
+                        Nội dung
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NoiDung)
+                    </dd>
+
+                    <dt>
+                        Email người gửi
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Trả lời phản hồi", "Reply", new { MaPost=Model.MaPhanHoi, ChuDe = Model.ChuDe, Email=Model.Email }) 
+            </p>
+        </div>
+    </div>
+</div>

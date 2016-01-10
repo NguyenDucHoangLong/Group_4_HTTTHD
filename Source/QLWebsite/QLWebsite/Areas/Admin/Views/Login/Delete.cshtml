@@ -56,6 +56,13 @@
                         @Html.DisplayFor(model => model.MaND)
                     </dd>
 
+                    <dt>
+                        Email
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
                 </dl>
 
                 @using (Html.BeginForm())
@@ -63,8 +70,7 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-actions no-color">
-                        <input type="submit" value="Xóa" class="btn btn-default" /> |
-                        @Html.ActionLink("Quay lại", "Index")
+                        <input type="submit" value="Xóa" class="btn btn-default" />
                     </div>
                 }
             </div>

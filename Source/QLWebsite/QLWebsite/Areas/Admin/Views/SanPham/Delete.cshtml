@@ -1,0 +1,105 @@
+﻿@model QLWebsite.Models.SanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminDefault.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Xóa sản phẩm</h3>
+            </div>
+
+            <h3>Bạn có thật sự muốn xóa sản phẩm này?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Tên sản phẩm
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenSP)
+                    </dd>
+
+                    <dt>
+                        Giá bán
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.GiaBan)
+                    </dd>
+
+                    <dt>
+                        Số lượng tồn
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SLTon)
+                    </dd>
+
+                    <dt>
+                        Nhà sản xuất
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NhaSanXuat)
+                    </dd>
+
+                    <dt>
+                        Ngày cập nhật
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NgayCapNhat)
+                    </dd>
+
+                    <dt>
+                        Mô tả
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MoTa)
+                    </dd>
+
+                    <dt>
+                        Hình ảnh
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HinhAnh)
+                    </dd>
+
+                    <dt>
+                        Loại sản phẩm
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LoaiSanPham.TenLoaiSP)
+                    </dd>
+
+                    <dt>
+                        Danh mục
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DanhMuc.TenDanhMuc)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" />
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

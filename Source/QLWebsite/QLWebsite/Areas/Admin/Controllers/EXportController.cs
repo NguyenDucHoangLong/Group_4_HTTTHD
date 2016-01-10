@@ -25,9 +25,9 @@ namespace QLWebsite.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult ExportToExcel(string ExcelFilePath)
+        public ActionResult ExportToExcel(string ExcelFilePath, string LoaiSP)
         {
-            DataTable Tb1 = GetData();
+            DataTable Tb1 = GetData(LoaiSP);
             try
             {
                 if (Tb1 == null || Tb1.Columns.Count == 0)
@@ -61,7 +61,7 @@ namespace QLWebsite.Areas.Admin.Controllers
                 {
                     try
                     {
-                        workSheet.SaveAs(@"C:\Users\Dragon\Downloads\" + ExcelFilePath + ".xlsx");
+                        workSheet.SaveAs(@"D:\" + ExcelFilePath + ".xlsx");
                         excelApp.Quit();
                         //MessageBox.Show("Excel file saved!");
                     }
@@ -81,10 +81,12 @@ namespace QLWebsite.Areas.Admin.Controllers
             }
             return RedirectToAction("Index", "Admin");
         }
-        private DataTable GetData()
+        private DataTable GetData(string LoaiSP)
         {
             String conString = @"data source=DRAGON-PC\SQLEXPRESS;initial catalog=QLWEBSITE;integrated security=True";
-            String sql = "select * from SanPham";
+            String sql = "select * from SanPham where LoaiSP=" + int.Parse(LoaiSP);
+            if (LoaiSP == "0")
+                sql = "select * from SanPham";
             SqlConnection con = new SqlConnection();
             con.ConnectionString = conString;
             con.Open();

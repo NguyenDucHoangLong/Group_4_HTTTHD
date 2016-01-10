@@ -18,6 +18,7 @@ namespace QLWebsite.Models
         public int NguoiBinhLuan { get; set; }
         public System.DateTime ThoiGianBinhLuan { get; set; }
         public string NoiDungBinhLuan { get; set; }
+        public Nullable<bool> TrangThai { get; set; }
     
         public virtual BaiPost BaiPost { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
