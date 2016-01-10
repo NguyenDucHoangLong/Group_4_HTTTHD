@@ -874,6 +874,9 @@
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>QLWebsite.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GiaSach.cs">
+      <DependentUpon>QLWebsite.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\KhachHang.cs">
       <DependentUpon>QLWebsite.tt</DependentUpon>
     </Compile>

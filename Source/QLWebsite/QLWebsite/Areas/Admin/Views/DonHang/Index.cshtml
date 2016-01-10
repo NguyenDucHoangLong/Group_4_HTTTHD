@@ -16,11 +16,10 @@
             <div class="panel-body">
                 <form action="/Admin/DonHang/Fillter" method="post">
                     <select name="trangthai">
-                        <option value="0">Tất cả</option>
-                        <option value="1">Mới tạo</option>
-                        <option value="2">Đang chờ giao</option>
-                        <option value="3">Đã giao</option>
-                        <option value="4">Đã hủy</option>
+                        <option value="2">Tất cả</option>
+                        <option value="1">Đã giao</option>
+                        <option value="0">Đang chờ giao</option>
+                        <option value="-1">Đã hủy</option>
                     </select>
                     <input type="submit" value="Lọc" />
                 </form>
@@ -46,17 +45,13 @@
                                     <td>@item.DiaChiGiao</td>
                                     @if(@item.TinhTrangDonHang==1)
                                     {
-                                        <td>Mới tạo</td>
+                                        <td>Đã giao</td>
                                     }
-                                    @if (@item.TinhTrangDonHang == 2)
+                                    @if (@item.TinhTrangDonHang == 0)
                                     {
                                         <td>Đang chờ giao</td>
                                     }
-                                    @if (@item.TinhTrangDonHang == 3)
-                                    {
-                                        <td>Đã giao</td>
-                                    }
-                                    @if (@item.TinhTrangDonHang == 4)
+                                    @if (@item.TinhTrangDonHang == -1)
                                     {
                                         <td>Đã hủy</td>
                                     }

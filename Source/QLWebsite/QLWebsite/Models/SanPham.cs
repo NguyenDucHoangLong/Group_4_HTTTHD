@@ -20,6 +20,7 @@ namespace QLWebsite.Models
             this.BinhLuan_DanhGia = new HashSet<BinhLuan_DanhGia>();
             this.CTDonHangs = new HashSet<CTDonHang>();
             this.SanPhamKhuyenMais = new HashSet<SanPhamKhuyenMai>();
+            this.GiaSaches = new HashSet<GiaSach>();
         }
     
         public int MaSP { get; set; }
@@ -42,5 +43,7 @@ namespace QLWebsite.Models
         public virtual LoaiSanPham LoaiSanPham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SanPhamKhuyenMai> SanPhamKhuyenMais { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GiaSach> GiaSaches { get; set; }
     }
 }

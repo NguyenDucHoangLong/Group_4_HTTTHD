@@ -35,6 +35,9 @@
         <AssociationConnector Association="QLWEBSITEModel.FK_SanPham_LoaiSanPham" ManuallyRouted="false" />
         <AssociationConnector Association="QLWEBSITEModel.FK_SanPhamKhuyenMai_SanPham" ManuallyRouted="false" />
         <EntityTypeShape EntityType="QLWEBSITEModel.PhanHoi" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="QLWEBSITEModel.GiaSach" Width="1.5" PointX="10.25" PointY="9.25" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_GiaSach_KhachHang" />
+        <AssociationConnector Association="QLWEBSITEModel.FK_GiaSach_SanPham" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

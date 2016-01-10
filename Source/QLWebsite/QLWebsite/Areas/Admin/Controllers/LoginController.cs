@@ -35,7 +35,7 @@ namespace QLWebsite.Areas.Admin.Controllers
                 if(taikhoan.Quyen==2)
                     return RedirectToAction("Index", "Admin");
                 else
-                    return RedirectToAction("Index", "Manager","Manager");
+                    return Redirect("/Manager/Manager/Index");
             }
         }
         /// tài khoản

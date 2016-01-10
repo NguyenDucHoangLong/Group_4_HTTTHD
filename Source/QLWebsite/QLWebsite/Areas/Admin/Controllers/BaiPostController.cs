@@ -21,9 +21,9 @@ namespace QLWebSite.Areas.Admin.Controllers
             var baiposts = db.BaiPosts.Where(b=>b.TrangThai!=false).Include(b => b.TaiKhoan).OrderBy(b=>b.MaPost).ToPagedList(page, pageSize);
             foreach(var item in baiposts)
             {
-                if(item.NoiDung.Length>85)
+                if(item.NoiDung.Length>65)
                 {
-                    item.NoiDung = item.NoiDung.Substring(0,85);
+                    item.NoiDung = item.NoiDung.Substring(0,65);
                 }
             }
             return View(baiposts);

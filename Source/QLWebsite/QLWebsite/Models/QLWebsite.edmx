@@ -10,6 +10,7 @@
             <PropertyRef Name="MaPost" />
           </Key>
           <Property Name="MaPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TieuDe" Type="nvarchar" MaxLength="100" />
           <Property Name="NoiDung" Type="nvarchar(max)" />
           <Property Name="ThoiGianPost" Type="datetime" />
           <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
@@ -79,6 +80,15 @@
           <Property Name="TinhTrangDonHang" Type="int" />
           <Property Name="DaThanhToan" Type="bit" />
           <Property Name="TongTien" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="SDTNguoiNhan" Type="nvarchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="GiaSach">
+          <Key>
+            <PropertyRef Name="MaGiaSach" />
+          </Key>
+          <Property Name="MaGiaSach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaSP" Type="int" />
+          <Property Name="MaKH" Type="int" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -272,6 +282,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_GiaSach_KhachHang">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+          <End Role="GiaSach" Type="Self.GiaSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="GiaSach">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GiaSach_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="GiaSach" Type="Self.GiaSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="GiaSach">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_KhachHang_LoaiKH">
           <End Role="LoaiKH" Type="Self.LoaiKH" Multiplicity="0..1" />
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
@@ -362,6 +396,7 @@
           <EntitySet Name="CTKhuyenMai" EntityType="Self.CTKhuyenMai" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiaSach" EntityType="Self.GiaSach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoaiKH" EntityType="Self.LoaiKH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoaiNV" EntityType="Self.LoaiNV" Schema="dbo" store:Type="Tables" />
@@ -402,6 +437,14 @@
           <AssociationSet Name="FK_DonHang_KhachHang" Association="Self.FK_DonHang_KhachHang">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="DonHang" EntitySet="DonHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GiaSach_KhachHang" Association="Self.FK_GiaSach_KhachHang">
+            <End Role="KhachHang" EntitySet="KhachHang" />
+            <End Role="GiaSach" EntitySet="GiaSach" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GiaSach_SanPham" Association="Self.FK_GiaSach_SanPham">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="GiaSach" EntitySet="GiaSach" />
           </AssociationSet>
           <AssociationSet Name="FK_KhachHang_LoaiKH" Association="Self.FK_KhachHang_LoaiKH">
             <End Role="LoaiKH" EntitySet="LoaiKH" />
@@ -444,6 +487,7 @@
           <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_BaiPost_TaiKhoan" FromRole="BaiPost" ToRole="TaiKhoan" />
           <NavigationProperty Name="BinhLuanBaiPosts" Relationship="Self.FK_BinhLuanBaiPost_BaiPost" FromRole="BaiPost" ToRole="BinhLuanBaiPost" />
           <Property Name="TrangThai" Type="Boolean" />
+          <Property Name="TieuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BinhLuan_DanhGia">
           <Key>
@@ -518,6 +562,7 @@
           <Property Name="TongTien" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="CTDonHangs" Relationship="Self.FK_CTDonHang_DonHang" FromRole="DonHang" ToRole="CTDonHang" />
           <NavigationProperty Name="KhachHang" Relationship="Self.FK_DonHang_KhachHang" FromRole="DonHang" ToRole="KhachHang" />
+          <Property Name="SDTNguoiNhan" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -534,6 +579,7 @@
           <NavigationProperty Name="BinhLuan_DanhGia" Relationship="Self.FK_BinhLuan_DanhGia_KhachHang" FromRole="KhachHang" ToRole="BinhLuan_DanhGia" />
           <NavigationProperty Name="DonHangs" Relationship="Self.FK_DonHang_KhachHang" FromRole="KhachHang" ToRole="DonHang" />
           <NavigationProperty Name="LoaiKH1" Relationship="Self.FK_KhachHang_LoaiKH" FromRole="KhachHang" ToRole="LoaiKH" />
+          <NavigationProperty Name="GiaSaches" Relationship="QLWEBSITEModel.FK_GiaSach_KhachHang" FromRole="KhachHang" ToRole="GiaSach" />
         </EntityType>
         <EntityType Name="LoaiKH">
           <Key>
@@ -595,6 +641,7 @@
           <NavigationProperty Name="DanhMuc" Relationship="Self.FK_SanPham_DanhMuc" FromRole="SanPham" ToRole="DanhMuc" />
           <NavigationProperty Name="LoaiSanPham" Relationship="Self.FK_SanPham_LoaiSanPham" FromRole="SanPham" ToRole="LoaiSanPham" />
           <NavigationProperty Name="SanPhamKhuyenMais" Relationship="Self.FK_SanPhamKhuyenMai_SanPham" FromRole="SanPham" ToRole="SanPhamKhuyenMai" />
+          <NavigationProperty Name="GiaSaches" Relationship="QLWEBSITEModel.FK_GiaSach_SanPham" FromRole="SanPham" ToRole="GiaSach" />
         </EntityType>
         <EntityType Name="SanPhamKhuyenMai">
           <Key>
@@ -872,6 +919,15 @@
             <Parameter Name="TinhTrangDonHang" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="PhanHois" EntityType="QLWEBSITEModel.PhanHoi" />
+          <EntitySet Name="GiaSaches" EntityType="QLWEBSITEModel.GiaSach" />
+          <AssociationSet Name="FK_GiaSach_KhachHang" Association="QLWEBSITEModel.FK_GiaSach_KhachHang">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="GiaSach" EntitySet="GiaSaches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GiaSach_SanPham" Association="QLWEBSITEModel.FK_GiaSach_SanPham">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="GiaSach" EntitySet="GiaSaches" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="ThongKe_Result">
           <Property Type="Int32" Name="MaDH" Nullable="false" />
@@ -891,6 +947,40 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TrangThai" Type="Boolean" />
         </EntityType>
+        <EntityType Name="GiaSach">
+          <Key>
+            <PropertyRef Name="MaGiaSach" />
+          </Key>
+          <Property Name="MaGiaSach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaSP" Type="Int32" />
+          <Property Name="MaKH" Type="Int32" />
+          <NavigationProperty Name="KhachHang" Relationship="QLWEBSITEModel.FK_GiaSach_KhachHang" FromRole="GiaSach" ToRole="KhachHang" />
+          <NavigationProperty Name="SanPham" Relationship="QLWEBSITEModel.FK_GiaSach_SanPham" FromRole="GiaSach" ToRole="SanPham" />
+        </EntityType>
+        <Association Name="FK_GiaSach_KhachHang">
+          <End Type="QLWEBSITEModel.KhachHang" Role="KhachHang" Multiplicity="0..1" />
+          <End Type="QLWEBSITEModel.GiaSach" Role="GiaSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="GiaSach">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GiaSach_SanPham">
+          <End Type="QLWEBSITEModel.SanPham" Role="SanPham" Multiplicity="0..1" />
+          <End Type="QLWEBSITEModel.GiaSach" Role="GiaSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="GiaSach">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -900,6 +990,7 @@
           <EntitySetMapping Name="BaiPosts">
             <EntityTypeMapping TypeName="QLWEBSITEModel.BaiPost">
               <MappingFragment StoreEntitySet="BaiPost">
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="MaPost" ColumnName="MaPost" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
@@ -963,6 +1054,7 @@
           <EntitySetMapping Name="DonHangs">
             <EntityTypeMapping TypeName="QLWEBSITEModel.DonHang">
               <MappingFragment StoreEntitySet="DonHang">
+                <ScalarProperty Name="SDTNguoiNhan" ColumnName="SDTNguoiNhan" />
                 <ScalarProperty Name="MaDH" ColumnName="MaDH" />
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
@@ -1088,6 +1180,15 @@
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="ChuDe" ColumnName="ChuDe" />
                 <ScalarProperty Name="MaPhanHoi" ColumnName="MaPhanHoi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiaSaches">
+            <EntityTypeMapping TypeName="QLWEBSITEModel.GiaSach">
+              <MappingFragment StoreEntitySet="GiaSach">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="MaGiaSach" ColumnName="MaGiaSach" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

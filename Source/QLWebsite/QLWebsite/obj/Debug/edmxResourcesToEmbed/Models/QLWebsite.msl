@@ -4,6 +4,7 @@
     <EntitySetMapping Name="BaiPosts">
       <EntityTypeMapping TypeName="QLWEBSITEModel.BaiPost">
         <MappingFragment StoreEntitySet="BaiPost">
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="MaPost" ColumnName="MaPost" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
@@ -67,6 +68,7 @@
     <EntitySetMapping Name="DonHangs">
       <EntityTypeMapping TypeName="QLWEBSITEModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="SDTNguoiNhan" ColumnName="SDTNguoiNhan" />
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
@@ -192,6 +194,15 @@
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
           <ScalarProperty Name="ChuDe" ColumnName="ChuDe" />
           <ScalarProperty Name="MaPhanHoi" ColumnName="MaPhanHoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiaSaches">
+      <EntityTypeMapping TypeName="QLWEBSITEModel.GiaSach">
+        <MappingFragment StoreEntitySet="GiaSach">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaGiaSach" ColumnName="MaGiaSach" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -12,7 +12,10 @@ namespace QLWebsite.Areas.Manager.Controllers
         // GET: /Manager/Manager/
         public ActionResult Index()
         {
-            return View();
+            if (Session["user"] == null ||  Session["quyen"].ToString() != "1")
+                return Redirect("/Admin/Login/Login");
+            else
+                return View();
         }
 	}
 }

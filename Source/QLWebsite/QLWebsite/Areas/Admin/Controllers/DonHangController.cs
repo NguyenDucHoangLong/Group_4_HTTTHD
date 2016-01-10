@@ -24,7 +24,7 @@ namespace QLWebSite.Areas.Admin.Controllers
         public ActionResult Fillter(string trangthai,int page = 1, int pageSize = 10)
         {
             int id = int.Parse(trangthai);
-            if (id == 0)
+            if (id == 2)
                 return RedirectToAction("Index");
             var donhangs = db.DonHangs.Include(d => d.KhachHang).Where(d=>d.TinhTrangDonHang == id).OrderBy(d => d.MaDH).ToPagedList(page, pageSize);
             return View(donhangs);

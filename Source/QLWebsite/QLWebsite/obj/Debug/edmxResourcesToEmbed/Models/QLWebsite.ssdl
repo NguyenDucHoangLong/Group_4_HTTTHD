@@ -5,6 +5,7 @@
       <PropertyRef Name="MaPost" />
     </Key>
     <Property Name="MaPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="100" />
     <Property Name="NoiDung" Type="nvarchar(max)" />
     <Property Name="ThoiGianPost" Type="datetime" />
     <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
@@ -74,6 +75,15 @@
     <Property Name="TinhTrangDonHang" Type="int" />
     <Property Name="DaThanhToan" Type="bit" />
     <Property Name="TongTien" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SDTNguoiNhan" Type="nvarchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="GiaSach">
+    <Key>
+      <PropertyRef Name="MaGiaSach" />
+    </Key>
+    <Property Name="MaGiaSach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaSP" Type="int" />
+    <Property Name="MaKH" Type="int" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
@@ -267,6 +277,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_GiaSach_KhachHang">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+    <End Role="GiaSach" Type="Self.GiaSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="GiaSach">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GiaSach_SanPham">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+    <End Role="GiaSach" Type="Self.GiaSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="GiaSach">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_KhachHang_LoaiKH">
     <End Role="LoaiKH" Type="Self.LoaiKH" Multiplicity="0..1" />
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
@@ -357,6 +391,7 @@
     <EntitySet Name="CTKhuyenMai" EntityType="Self.CTKhuyenMai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiaSach" EntityType="Self.GiaSach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiKH" EntityType="Self.LoaiKH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiNV" EntityType="Self.LoaiNV" Schema="dbo" store:Type="Tables" />
@@ -397,6 +432,14 @@
     <AssociationSet Name="FK_DonHang_KhachHang" Association="Self.FK_DonHang_KhachHang">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="DonHang" EntitySet="DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GiaSach_KhachHang" Association="Self.FK_GiaSach_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="GiaSach" EntitySet="GiaSach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GiaSach_SanPham" Association="Self.FK_GiaSach_SanPham">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="GiaSach" EntitySet="GiaSach" />
     </AssociationSet>
     <AssociationSet Name="FK_KhachHang_LoaiKH" Association="Self.FK_KhachHang_LoaiKH">
       <End Role="LoaiKH" EntitySet="LoaiKH" />
