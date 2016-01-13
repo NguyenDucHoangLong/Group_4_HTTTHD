@@ -91,9 +91,9 @@ namespace QLWebSite.Areas.Admin.Controllers
                 // mã hóa mail
                 smtp.EnableSsl = true;
                 // username, password mail người gửi
-                smtp.Credentials = new NetworkCredential("nplinh234@gmail.com", "linh01689357608");
+                smtp.Credentials = new NetworkCredential("yoloshop12345@gmail.com", "yolo12345");
                 // gửi mail
-                smtp.Send("nplinh234@gmail.com", email, chude, noidung);
+                smtp.Send("yoloshop12345@gmail.com", email, chude, noidung);
                 // Chỉnh sửa trạng thái phản hồi
                 PhanHoi phanhoi = db.PhanHois.Find(int.Parse(mapost));
                 phanhoi.TrangThai = true;

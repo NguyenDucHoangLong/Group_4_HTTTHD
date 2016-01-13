@@ -83,7 +83,7 @@ namespace QLWebsite.Areas.Admin.Controllers
         }
         private DataTable GetData(string LoaiSP)
         {
-            String conString = @"data source=DRAGON-PC\SQLEXPRESS;initial catalog=QLWEBSITE;integrated security=True";
+            String conString = @"data source=QLWEBSITE.mssql.somee.com;user id=nplinh234;pwd=123456789;initial catalog=QLWEBSITE; persist security info=False;";
             String sql = "select * from SanPham where LoaiSP=" + int.Parse(LoaiSP);
             if (LoaiSP == "0")
                 sql = "select * from SanPham";
